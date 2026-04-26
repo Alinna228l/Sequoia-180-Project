@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SPC — Marketing Execution Toolkit · LA28 Runway</title>
+<meta name="description" content="Marketing Execution Toolkit for Sequoia Parks Conservancy: month-by-month action plan, partner roster, messaging templates, and intern program backed to the LA28 Opening Ceremony on July 18, 2028.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==============================================================
+   DESIGN TOKENS — Sequoia / outdoor art direction
+   Color: warm parchment, forest canopy, sequoia rust, ink charcoal
+   Type: Cormorant Garamond display + Instrument Sans body + JetBrains Mono code
+   ============================================================== */
+:root {
+  --rust:        #B85C2C;
+  --rust-dk:     #8C3F18;
+  --rust-lt:     #D4784A;
+  --forest:      #1B3328;
+  --forest-mid:  #264D3A;
+  --canopy:      #3A6B52;
+  --moss:        #5A7E3F;
+  --parch:       #F5F1E8;
+  --sand:        #EAE2D0;
+  --linen:       #FAF7F0;
+  --stone:       #7A7068;
+  --charcoal:    #2E2820;
+  --ink:         #1A1410;
+  --rule:        rgba(26,20,16,.10);
+  --rule-lt:     rgba(26,20,16,.055);
+  --rule-md:     rgba(26,20,16,.18);
+  --white:       #FDFAF5;
+  --warn-bg:     #FBF1E2;
+  --warn-bd:     #C99454;
+  --good-bg:     #E9F0E7;
+  --good-bd:     #6F8F62;
+  --note-bg:     #ECE6D6;
+  --shadow-sm:   0 1px 0 rgba(26,20,16,.04), 0 1px 2px rgba(26,20,16,.04);
+  --shadow-md:   0 1px 0 rgba(26,20,16,.04), 0 8px 24px -10px rgba(26,20,16,.18);
+}
+
+/* ==============================================================
+   RESET + BASE
+   ============================================================== */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body {
+  font-family:'Instrument Sans',system-ui,sans-serif;
+  background:var(--linen);
+  color:var(--ink);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='400' height='400' filter='url(%23g)' opacity='0.028'/></svg>");
+  opacity:.5; mix-blend-mode:multiply;
+}
+img,svg { max-width:100%; display:block; }
+a { color:var(--rust-dk); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; transition:color .15s; }
+a:hover { color:var(--rust); }
+:focus-visible { outline:2px solid var(--rust); outline-offset:3px; border-radius:2px; }
+:target { scroll-margin-top:88px; }
+
+/* ==============================================================
+   LAYOUT — sticky top nav, full-width content with constrained inner widths
+   ============================================================== */
+.skip { position:absolute; left:-9999px; top:auto; }
+.skip:focus { position:fixed; left:16px; top:16px; z-index:1000; background:var(--forest); color:var(--white); padding:10px 16px; border-radius:3px; }
+
+.topbar {
+  position:sticky; top:0; z-index:50;
+  background:rgba(250,247,240,.94);
+  backdrop-filter:saturate(140%) blur(12px);
+  -webkit-backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar-inner {
+  max-width:1280px; margin:0 auto;
+  display:grid; grid-template-columns:auto 1fr auto; gap:24px; align-items:center;
+  padding:14px 28px;
+}
+.brand { display:flex; align-items:center; gap:10px; font-family:'Cormorant Garamond',serif; }
+.brand-mark {
+  width:32px; height:32px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--moss) 0%, var(--forest) 75%);
+  position:relative; flex-shrink:0;
+}
+.brand-mark::after {
+  content:''; position:absolute; inset:6px;
+  background:linear-gradient(180deg, transparent 30%, rgba(255,255,255,.18) 80%);
+  border-radius:50%;
+}
+.brand-text { line-height:1.1; }
+.brand-name { font-size:1.05rem; font-weight:600; letter-spacing:.01em; color:var(--forest); }
+.brand-tag { font-family:'Instrument Sans',sans-serif; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--stone); font-weight:500; }
+
+.topnav {
+  display:flex; gap:6px; flex-wrap:wrap; justify-content:center; align-items:center;
+  font-size:.74rem; font-weight:500;
+}
+.topnav a {
+  color:var(--charcoal); text-decoration:none; padding:7px 11px; border-radius:3px;
+  letter-spacing:.04em; white-space:nowrap; transition:background .15s, color .15s;
+}
+.topnav a:hover { background:var(--sand); color:var(--ink); }
+.topnav a.is-active { background:var(--forest); color:var(--white); }
+
+.topbar-cta {
+  display:flex; gap:8px; align-items:center;
+}
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'Instrument Sans',sans-serif; font-size:.7rem; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase;
+  padding:9px 16px; border-radius:3px; border:1px solid var(--forest);
+  background:var(--forest); color:var(--white); cursor:pointer; text-decoration:none;
+  transition:background .15s, color .15s, border-color .15s;
+}
+.btn:hover { background:var(--forest-mid); color:var(--white); }
+.btn.btn-ghost { background:transparent; color:var(--forest); }
+.btn.btn-ghost:hover { background:var(--forest); color:var(--white); }
+.btn.btn-rust { background:var(--rust); border-color:var(--rust); }
+.btn.btn-rust:hover { background:var(--rust-dk); border-color:var(--rust-dk); }
+
+.menu-toggle { display:none; }
+
+@media (max-width: 980px) {
+  .topbar-inner { grid-template-columns:auto auto; padding:12px 18px; }
+  .topnav {
+    grid-column:1/-1;
+    display:none; flex-direction:column; align-items:stretch;
+    border-top:1px solid var(--rule); padding-top:10px; margin-top:6px;
+  }
+  .topnav a { padding:10px 8px; border-bottom:1px solid var(--rule-lt); border-radius:0; }
+  .topnav.is-open { display:flex; }
+  .menu-toggle {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:38px; height:38px; border:1px solid var(--rule-md); border-radius:3px;
+    background:transparent; cursor:pointer;
+  }
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    display:block; width:18px; height:2px; background:var(--ink); position:relative;
+  }
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    content:''; position:absolute; left:0;
+  }
+  .menu-toggle span::before { top:-6px; }
+  .menu-toggle span::after  { top:6px; }
+  .topbar-cta .btn-ghost { display:none; }
+}
+
+/* ==============================================================
+   MAIN
+   ============================================================== */
+main { position:relative; z-index:1; }
+.wrap { max-width:1180px; margin:0 auto; padding:0 28px; }
+@media (max-width:640px) { .wrap { padding:0 18px; } }
+
+section.section { padding:64px 0 32px; scroll-margin-top:88px; }
+section.section + section.section { border-top:1px solid var(--rule-lt); }
+
+.eye {
+  font-family:'Instrument Sans',sans-serif;
+  font-size:.66rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--rust); margin-bottom:10px;
+}
+h1, h2, h3, h4 { font-family:'Cormorant Garamond',serif; color:var(--ink); font-weight:500; line-height:1.1; }
+h1 { font-size:clamp(2.4rem, 5vw, 4.2rem); letter-spacing:-.01em; }
+h1 em { font-style:italic; color:var(--rust); }
+h2 { font-size:clamp(1.7rem, 3.4vw, 2.6rem); letter-spacing:-.005em; }
+h2 em { font-style:italic; color:var(--canopy); }
+h3 { font-size:1.2rem; font-weight:600; color:var(--forest); margin-bottom:10px; letter-spacing:0; }
+h4 { font-size:.95rem; font-weight:600; color:var(--forest-mid); margin-bottom:6px; }
+
+.sec-rule { width:48px; height:2px; background:var(--rust); margin:18px 0 22px; }
+.sec-desc { font-size:1.02rem; color:var(--charcoal); max-width:780px; margin-bottom:28px; line-height:1.65; }
+
+p.body { font-size:.96rem; color:var(--charcoal); margin-bottom:14px; max-width:78ch; }
+p.body strong { color:var(--ink); font-weight:600; }
+ul.bul, ol.bul { margin:8px 0 14px 18px; max-width:78ch; }
+ul.bul li, ol.bul li { font-size:.92rem; color:var(--charcoal); margin-bottom:6px; line-height:1.55; }
+
+.subhead {
+  font-family:'Instrument Sans',sans-serif; font-size:.68rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--stone);
+  margin:32px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--rule);
+}
+
+/* ==============================================================
+   HERO
+   ============================================================== */
+.hero {
+  padding:88px 0 56px;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(184,92,44,.08), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(58,107,82,.10), transparent 60%);
+  border-bottom:1px solid var(--rule-lt);
+}
+.hero-eye { color:var(--rust); font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600; margin-bottom:14px; }
+.hero h1 { margin-bottom:20px; max-width:18ch; }
+.hero-sub { font-size:1.1rem; color:var(--charcoal); max-width:62ch; line-height:1.55; margin-bottom:28px; }
+.hero-meta {
+  display:flex; flex-wrap:wrap; gap:8px 14px; font-size:.72rem;
+  color:var(--stone); letter-spacing:.1em; text-transform:uppercase; font-weight:500;
+}
+.hero-meta span { display:inline-flex; align-items:center; gap:6px; }
+.hero-meta span::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--rust); }
+
+.hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+
+.runway {
+  margin-top:24px; padding:18px 22px;
+  background:var(--white); border:1px solid var(--rule); border-radius:4px;
+  display:flex; flex-wrap:wrap; gap:18px 36px; align-items:center;
+  box-shadow:var(--shadow-sm);
+}
+.runway-label { font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--stone); font-weight:600; }
+.runway-target { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--forest); font-weight:500; }
+.runway-target em { color:var(--rust); font-style:italic; }
+.runway-count { font-family:'JetBrains Mono',monospace; font-size:.95rem; color:var(--ink); font-weight:500; }
+
+/* ==============================================================
+   CARDS / GRIDS
+   ============================================================== */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:14px 0; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:14px 0; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:14px 0; }
+@media (max-width:880px) {
+  .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; }
+}
+
+.card {
+  background:var(--white); border:1px solid var(--rule); border-radius:4px;
+  padding:22px 22px 20px; box-shadow:var(--shadow-sm);
+}
+.card h4 {
+  font-family:'Instrument Sans',sans-serif; font-size:.7rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--rust); margin-bottom:12px;
+}
+.card ul { margin-left:18px; }
+.card li { font-size:.9rem; color:var(--charcoal); margin-bottom:5px; line-height:1.5; }
+
+.callout {
+  border-left:3px solid var(--rust); background:var(--warn-bg);
+  padding:14px 18px; margin:18px 0; border-radius:0 3px 3px 0;
+  font-size:.93rem; color:var(--charcoal);
+}
+.callout strong { color:var(--rust-dk); }
+.callout.good { border-color:var(--good-bd); background:var(--good-bg); }
+.callout.good strong { color:var(--forest); }
+.callout.note { border-color:var(--canopy); background:var(--note-bg); }
+.callout.note strong { color:var(--forest); }
+
+/* KPI tiles */
+.kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 6px; }
+@media (max-width:880px) { .kpis { grid-template-columns:1fr 1fr; } }
+.kpi {
+  background:var(--white); border:1px solid var(--rule); border-radius:4px; padding:16px;
+}
+.kpi-num { font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--rust-dk); font-weight:600; line-height:1; }
+.kpi-lbl { font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--stone); margin-top:6px; font-weight:600; }
+.kpi-note { font-size:.78rem; color:var(--charcoal); margin-top:8px; line-height:1.4; }
+.kpi-tag {
+  display:inline-block; font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
+  padding:2px 6px; border-radius:2px; font-weight:600; margin-top:8px;
+  background:var(--sand); color:var(--charcoal);
+}
+.kpi-tag.hyp { background:#F4E5C9; color:#7A4F12; }
+.kpi-tag.bench { background:#DDE8DD; color:#2F4A2C; }
+.kpi-tag.internal { background:#E5DFCC; color:#5A4F2C; }
+
+/* ==============================================================
+   TABLES — mobile-safe (horizontal scroll + sticky-ish first col)
+   ============================================================== */
+.tbl-wrap {
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  border:1px solid var(--rule); border-radius:4px; background:var(--white);
+  margin:10px 0 22px; box-shadow:var(--shadow-sm);
+}
+.tbl-wrap::-webkit-scrollbar { height:8px; }
+.tbl-wrap::-webkit-scrollbar-thumb { background:var(--rule-md); border-radius:4px; }
+table.dt { width:100%; min-width:720px; border-collapse:collapse; font-size:.85rem; }
+table.dt th, table.dt td {
+  text-align:left; padding:11px 14px; vertical-align:top;
+  border-bottom:1px solid var(--rule-lt); line-height:1.5;
+}
+table.dt thead th {
+  background:var(--parch); font-family:'Instrument Sans',sans-serif;
+  font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--charcoal);
+  border-bottom:1px solid var(--rule); position:sticky; top:0;
+}
+table.dt tbody tr:hover { background:var(--linen); }
+table.dt td.lc { font-weight:500; color:var(--forest); white-space:nowrap; }
+table.dt td.sc { font-weight:500; color:var(--ink); }
+table.dt td .pill {
+  display:inline-block; padding:2px 7px; border-radius:10px;
+  font-size:.66rem; letter-spacing:.08em; font-weight:600;
+}
+.pill-warm    { background:#F2D9C2; color:#7A3A12; }
+.pill-cool    { background:#D9E5DA; color:#284631; }
+.pill-pending { background:#E8DFCB; color:#5A4F2C; }
+.pill-active  { background:#E2D0BA; color:#7A4220; }
+.pill-future  { background:#E0E0E0; color:#444; }
+
+/* ==============================================================
+   STEP / TIMELINE / PHASES
+   ============================================================== */
+.timeline { display:grid; gap:14px; margin:14px 0; }
+.tl-row {
+  display:grid; grid-template-columns:140px 1fr; gap:18px;
+  background:var(--white); border:1px solid var(--rule); border-radius:4px;
+  padding:18px 22px; box-shadow:var(--shadow-sm);
+}
+.tl-when {
+  font-family:'JetBrains Mono',monospace; font-size:.78rem; font-weight:500;
+  color:var(--rust); text-transform:uppercase; letter-spacing:.04em; line-height:1.4;
+  border-right:1px solid var(--rule-lt); padding-right:18px;
+}
+.tl-body h4 { margin-bottom:8px; font-size:1.02rem; }
+.tl-body ul { margin-left:18px; }
+.tl-body li { font-size:.88rem; margin-bottom:4px; color:var(--charcoal); }
+.tl-body .owner {
+  display:inline-block; margin-top:8px; padding:3px 8px; border-radius:2px;
+  font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  background:var(--sand); color:var(--charcoal);
+}
+@media (max-width:680px) {
+  .tl-row { grid-template-columns:1fr; }
+  .tl-when { border-right:0; border-bottom:1px solid var(--rule-lt); padding-right:0; padding-bottom:8px; }
+}
+
+/* Contact cards */
+.contact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:14px 0 22px; }
+@media (max-width:780px) { .contact-grid { grid-template-columns:1fr; } }
+.contact-card {
+  background:var(--white); border:1px solid var(--rule); border-radius:4px;
+  padding:18px 20px; box-shadow:var(--shadow-sm);
+}
+.contact-seq { font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--rust); font-weight:600; margin-bottom:8px; }
+.contact-name { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; color:var(--ink); }
+.contact-title { font-size:.82rem; color:var(--stone); margin:3px 0 10px; }
+.contact-body { font-size:.88rem; color:var(--charcoal); line-height:1.55; }
+.contact-link { font-size:.78rem; color:var(--rust-dk); margin-top:8px; display:block; word-break:break-word; }
+
+/* ==============================================================
+   TEMPLATES — copy-paste-ready
+   ============================================================== */
+.template {
+  background:var(--white); border:1px solid var(--rule); border-radius:4px;
+  margin:14px 0; overflow:hidden; box-shadow:var(--shadow-sm);
+}
+.template-head {
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+  padding:14px 18px; background:var(--parch); border-bottom:1px solid var(--rule);
+}
+.template-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--forest); font-weight:600; }
+.template-meta { font-size:.7rem; color:var(--stone); letter-spacing:.1em; text-transform:uppercase; font-weight:500; }
+.copy-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'Instrument Sans',sans-serif; font-size:.66rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px; border-radius:3px; border:1px solid var(--forest);
+  background:transparent; color:var(--forest); cursor:pointer; transition:background .15s, color .15s;
+}
+.copy-btn:hover { background:var(--forest); color:var(--white); }
+.copy-btn.is-copied { background:var(--canopy); color:var(--white); border-color:var(--canopy); }
+.template-ai {
+  font-size:.84rem; color:var(--charcoal); padding:12px 18px;
+  background:#F0EBDA; border-bottom:1px solid var(--rule-lt); line-height:1.55;
+}
+.template-ai strong { color:var(--rust-dk); font-weight:600; letter-spacing:.06em; text-transform:uppercase; font-size:.72rem; }
+pre.template-body {
+  font-family:'JetBrains Mono', ui-monospace, monospace;
+  font-size:.83rem; line-height:1.6; color:var(--ink);
+  padding:18px; white-space:pre-wrap; word-wrap:break-word;
+  background:var(--white); margin:0;
+}
+pre.template-body .var { color:var(--rust-dk); font-weight:600; background:rgba(184,92,44,.08); padding:0 3px; border-radius:2px; }
+
+/* ==============================================================
+   FOOTER & CITATIONS
+   ============================================================== */
+.foot { padding:60px 0 80px; border-top:1px solid var(--rule); margin-top:48px; background:linear-gradient(180deg, transparent, rgba(58,107,82,.04)); }
+.foot h3 { font-size:1.3rem; margin-bottom:12px; }
+.foot ol { margin-left:22px; max-width:84ch; }
+.foot ol li { font-size:.82rem; color:var(--charcoal); margin-bottom:8px; line-height:1.55; }
+.foot ol li a { word-break:break-word; }
+.foot .colophon { margin-top:32px; font-size:.78rem; color:var(--stone); }
+sup.cite { font-size:.7em; font-weight:600; color:var(--rust); }
+sup.cite a { color:var(--rust); text-decoration:none; }
+sup.cite a:hover { color:var(--rust-dk); text-decoration:underline; }
+
+/* Misc utilities */
+.muted { color:var(--stone); }
+.mono  { font-family:'JetBrains Mono',monospace; font-size:.86em; }
+.tag {
+  display:inline-block; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase;
+  padding:3px 8px; border-radius:10px; font-weight:600; margin-right:6px;
+  background:var(--sand); color:var(--charcoal);
+}
+.tag.hyp { background:#F4E5C9; color:#7A4F12; }
+.tag.bench { background:#DDE8DD; color:#2F4A2C; }
+.tag.internal { background:#E5DFCC; color:#5A4F2C; }
+.tag.sourced { background:#DDE5EC; color:#1F3A55; }
+
+@media print {
+  .topbar, .menu-toggle, .copy-btn, .hero-actions { display:none !important; }
+  body { background:white; }
+  section.section { page-break-inside:avoid; padding:24px 0; }
+  .tbl-wrap, .card { box-shadow:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#overview">Skip to content</a>
+
+<!-- ============================================================
+  TOP NAV
+============================================================ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="#top" class="brand" aria-label="Sequoia Parks Conservancy — Marketing Execution Toolkit">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-name">Sequoia Parks Conservancy</span>
+        <span class="brand-tag">Marketing Execution Toolkit · LA28 Runway</span>
+      </span>
+    </a>
+    <nav class="topnav" id="topnav" aria-label="Section navigation">
+      <a href="#overview">Overview</a>
+      <a href="#stack">Stack</a>
+      <a href="#priorities">Priorities</a>
+      <a href="#audiences">Audiences</a>
+      <a href="#usc">USC</a>
+      <a href="#annenberg">Annenberg</a>
+      <a href="#partners">Partner Roster</a>
+      <a href="#plan">Action Plan</a>
+      <a href="#shortform">Short-Form</a>
+      <a href="#funnel">Donor Funnel</a>
+      <a href="#templates">Templates</a>
+      <a href="#interns">Intern Program</a>
+      <a href="#measurement">Measurement</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <div class="topbar-cta">
+      <a class="btn btn-ghost" href="#plan">Open Action Plan</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="topnav"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================================================
+  HERO
+============================================================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eye">Marketing Execution Toolkit · Runway to LA28</div>
+    <h1>Impact Is<br><em>In Our Nature</em></h1>
+    <p class="hero-sub">A working playbook for the Sequoia Parks Conservancy team — built for the actual stack we run today, with a month-by-month plan that backs into the LA28 Opening Ceremony on <strong>July 18, 2028</strong>.<sup class="cite"><a href="#cite-la28opening">1</a></sup> No invented stats, no tools we don&rsquo;t have, no commitments that aren&rsquo;t in place.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-rust" href="#plan">Month-by-Month Plan</a>
+      <a class="btn btn-ghost" href="#partners">Partner Roster (28)</a>
+      <a class="btn btn-ghost" href="#templates">Copy-Ready Templates</a>
+    </div>
+
+    <div class="hero-meta">
+      <span>For: Nicole Stivers, Director of Marketing &amp; Comms</span>
+      <span>From: Grace Huang (PM), Sumia Dawla, Simon Xiong, Alinna Liu, Thomas Bouchou</span>
+      <span>Updated: April 2026</span>
+    </div>
+
+    <div class="runway" role="note" aria-label="Runway countdown to LA28 Opening Ceremony">
+      <div>
+        <div class="runway-label">Runway target</div>
+        <div class="runway-target">LA28 Opening Ceremony — <em>July 18, 2028</em><sup class="cite"><a href="#cite-la28opening">1</a></sup></div>
+      </div>
+      <div>
+        <div class="runway-label">From today</div>
+        <div class="runway-count" id="runwayCount">~27 months · ~117 weeks</div>
+      </div>
+      <div>
+        <div class="runway-label">Plan structure</div>
+        <div class="runway-count">Foundation → Build → Amplify → Peak</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  OVERVIEW
+============================================================ -->
+<section id="overview" class="section">
+  <div class="wrap">
+    <div class="eye">Foundation</div>
+    <h2>Overview &amp; <em>brand voice in execution</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">SPC&rsquo;s voice is <strong>calm, not urgent — warm, not sentimental — grounded, not abstract — purposeful, not performative.</strong> These are operational constraints, not stylistic preferences. They shape every email, partner pitch, social post, and on-park sign in this toolkit.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Apply in every asset</h4>
+        <ul>
+          <li>Lead with connection to place, not institutional achievement.</li>
+          <li>Show impact through real projects and named locations — General Sherman, Moro Rock, Cedar Grove, Hospital Rock.</li>
+          <li>Name partners and clarify roles. SPC supports the National Park Service; we do not act alone.</li>
+          <li>Let long-term commitment carry weight. Avoid urgency or scarcity framing.</li>
+          <li>Frame asks around shared responsibility, not guilt or obligation.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Avoid in every asset</h4>
+        <ul>
+          <li>Unsourced traffic or visitor numbers. If a stat isn&rsquo;t cited, label it <span class="tag hyp">Hypothetical</span> or <span class="tag internal">Internal Baseline</span>.</li>
+          <li>Olympic claims framed as a single number (e.g., a fixed &ldquo;LA28 visitor surge&rdquo; figure). Frame LA28 as a moment, not a stat.</li>
+          <li>Implying a formal NPS partnership status or dates that aren&rsquo;t public.</li>
+          <li>Generic copy interchangeable with any park or nonprofit.</li>
+          <li>Tools we don&rsquo;t have (Salesforce, HubSpot, dedicated CDP). Reference only the live stack in §<a href="#stack">Stack</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout note"><strong>Stat hygiene rule.</strong> Every number in this toolkit is one of three things: <span class="tag sourced">Sourced</span> with a footnote and live URL · <span class="tag hyp">Hypothetical</span> illustrative target · <span class="tag internal">Internal Baseline</span> drawn from SPC&rsquo;s own analytics. If you can&rsquo;t tag it as one of those, take it out.</div>
+  </div>
+</section>
+
+<!-- ============================================================
+  ACTUAL STACK
+============================================================ -->
+<section id="stack" class="section">
+  <div class="wrap">
+    <div class="eye">Foundation · The honest tech list</div>
+    <h2>What we <em>actually</em> use</h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">This toolkit only assumes tools SPC has today. Everything else is labeled as a <em>future add</em>. Don&rsquo;t plan a tactic that requires software we don&rsquo;t own.</p>
+
+    <div class="subhead">Live today</div>
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Function</th><th>Tool</th><th>How we use it</th></tr></thead>
+      <tbody>
+        <tr><td class="lc">CRM (makeshift)</td><td class="sc">Monday.com</td><td>Outreach pipelines, partnership tracking, intern task boards. Acts as the closest thing to a CRM we have.</td></tr>
+        <tr><td class="lc">Consumer data</td><td class="sc">Department-specific tools</td><td>No central consumer-data platform. Each team owns its own slice (events, donations, e-comm). Cross-team analysis is manual.</td></tr>
+        <tr><td class="lc">Email</td><td class="sc">Constant Contact</td><td>Newsletters, donor follow-ups, segment-based campaigns.</td></tr>
+        <tr><td class="lc">Social organic</td><td class="sc">FB, Instagram, TikTok, LinkedIn, YouTube, Reddit</td><td>Native posting + community management. Reddit is treated as a research and slow-conversation channel, not a campaign channel.</td></tr>
+        <tr><td class="lc">Scheduling</td><td class="sc">Later.com</td><td>Cross-platform scheduling, link-in-bio for IG and TikTok, reporting.</td></tr>
+        <tr><td class="lc">Link routing</td><td class="sc">LinkTree, Bit.ly</td><td>Trackable shortlinks for posts, signage, and partner co-marketing.</td></tr>
+        <tr><td class="lc">Paid</td><td class="sc">Google Ad Grants, Meta, Reddit ads</td><td>Ad Grants for awareness/search, Meta for SoCal targeting, Reddit for niche outdoor subs.</td></tr>
+        <tr><td class="lc">Analytics</td><td class="sc">Google Analytics, Meta, Constant Contact</td><td>Native analytics in each platform. Power BI dashboard is in development to consolidate.</td></tr>
+        <tr><td class="lc">Design</td><td class="sc">Canva (preferred) + Adobe Creative Cloud</td><td>Canva for speed and team collaboration; Adobe for higher-fidelity assets and motion.</td></tr>
+        <tr><td class="lc">Productivity</td><td class="sc">Google Workspace</td><td>Docs, Sheets, Drive, Meet — primary collaboration surface.</td></tr>
+        <tr><td class="lc">AI</td><td class="sc">Claude, ChatGPT, Gemini</td><td>Drafting, research summarization, copy variants, prompt-driven planning. Templates in §<a href="#templates">Templates</a> are written for direct paste-in.</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="subhead">Suggested future adds (do not plan around these yet)</div>
+    <div class="grid-3">
+      <div class="card">
+        <h4>Centralized CRM</h4>
+        <p class="body" style="font-size:.88rem">Eventually graduate from Monday.com to a CRM that holds donors, members, partners, and event attendees in one record (HubSpot, Salesforce NPSP, Bloomerang, or Virtuous). Wait until Power BI dashboard is stable so we know what data we&rsquo;re actually moving.</p>
+      </div>
+      <div class="card">
+        <h4>Email + landing pages tied to CRM</h4>
+        <p class="body" style="font-size:.88rem">Constant Contact handles email well; pair it with a landing-page tool that reads from the same contact record (or move email into the CRM&rsquo;s native tool). Today we ship email and landing pages separately.</p>
+      </div>
+      <div class="card">
+        <h4>Lightweight CDP / event tracking</h4>
+        <p class="body" style="font-size:.88rem">A consumer-data layer (Segment-style) so the LA28 landing page, donation forms, and Field Institute bookings all write to the same identity graph. Until then, treat each channel&rsquo;s data as siloed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STRATEGIC PRIORITIES
+============================================================ -->
+<section id="priorities" class="section">
+  <div class="wrap">
+    <div class="eye">Foundation</div>
+    <h2>Strategic priorities <em>for the LA28 runway</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">The six bets the team is making. Everything else in the toolkit serves one of these.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Priority 01 · Email list as #1</h4>
+        <p class="body" style="font-size:.9rem">Owned email is the only audience SPC fully controls. Every campaign, partner activation, and on-park sign should funnel toward an email signup before a donation ask. Constant Contact is already in place — what&rsquo;s missing is consistent capture across the website, Field Institute pages, and on-park QR codes.</p>
+      </div>
+      <div class="card">
+        <h4>Priority 02 · &ldquo;The Other California&rdquo; positioning</h4>
+        <p class="body" style="font-size:.9rem">LA, the coast, and Disneyland are <em>one</em> California. Sequoia is the other. This is the line we want to own during the LA28 moment — visitors flying in for the Games discovering that the largest trees on Earth<sup class="cite"><a href="#cite-sherman">2</a></sup> are a half-day&rsquo;s drive away.</p>
+      </div>
+      <div class="card">
+        <h4>Priority 03 · The near-loss / wildfire story leads</h4>
+        <p class="body" style="font-size:.9rem">The 2020 SQF Complex and 2021 KNP Complex fires killed an estimated 13–19% of all giant sequoias 4 ft+ in diameter on the planet.<sup class="cite"><a href="#cite-knp">3</a></sup> That is the lead. It is true, it is sourced, and it is the most powerful framing for stewardship the park will have in our lifetime. Use it.</p>
+      </div>
+      <div class="card">
+        <h4>Priority 04 · B2B club logistics as conversion</h4>
+        <p class="body" style="font-size:.9rem">Outdoor clubs at USC, UCLA, Caltech, Pomona, LMU, and Sierra Club chapters drive group trips. Make SPC the easiest organization on the planet to plan a group trip with: pre-built itineraries, group rate page, single Monday.com intake form, single named contact.</p>
+      </div>
+      <div class="card">
+        <h4>Priority 05 · LA28 landing page</h4>
+        <p class="body" style="font-size:.9rem">One canonical page — sequoiaparksconservancy.org/la28 (or similar) — that holds the &ldquo;Other California&rdquo; story, a half-day-trip itinerary from LA, a Field Institute LA28-window booking module, and the email capture. Drives all paid + earned traffic in 2027–2028.</p>
+      </div>
+      <div class="card">
+        <h4>Priority 06 · Minimum Viable Activation</h4>
+        <p class="body" style="font-size:.9rem">Every initiative below has an MVA: the smallest version we can ship in 14 days with the team and stack we have. If a section in this toolkit doesn&rsquo;t name an MVA, treat it as not yet planned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  AUDIENCES (no "3 segments" framing — call them what they are)
+============================================================ -->
+<section id="audiences" class="section">
+  <div class="wrap">
+    <div class="eye">Pre-Campaign</div>
+    <h2>Priority audiences <em>for the LA28 runway</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">Audience priorities that came out of the team&rsquo;s research. Treat these as <em>priority audiences</em>, not a fixed segmentation model — overlap is real and intentional.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h4>USC + Olympic athlete network</h4>
+        <p class="body" style="font-size:.9rem"><strong>Who:</strong> USC Olympic alumni, current athletes, confirmed LA28 participants and their networks.</p>
+        <p class="body" style="font-size:.9rem"><strong>Why they matter:</strong> USC has historically been one of the strongest Olympic pipelines in the U.S.<sup class="cite"><a href="#cite-uscolympic">4</a></sup> LA28 is institutionally tied to USC venues including the LA Memorial Coliseum.<sup class="cite"><a href="#cite-coliseum">5</a></sup></p>
+        <p class="body" style="font-size:.9rem"><strong>Goal with this audience:</strong> credibility and storytelling reach — not mass conversion.</p>
+      </div>
+      <div class="card">
+        <h4>Southern California outdoor + active community</h4>
+        <p class="body" style="font-size:.9rem"><strong>Who:</strong> hikers, climbers, trail runners, cyclists, fitness-oriented Angelenos. Members of Sierra Club LA chapters, university outdoor programs, REI Co-op classes.</p>
+        <p class="body" style="font-size:.9rem"><strong>Why they matter:</strong> already biased toward the product. Lower acquisition cost. Highest likelihood of repeat visitation and stewardship behavior.</p>
+        <p class="body" style="font-size:.9rem"><strong>Goal with this audience:</strong> participation, repeat trips, B2B group conversion through clubs.</p>
+      </div>
+      <div class="card">
+        <h4>Brands, creators, and Olympic-era travelers</h4>
+        <p class="body" style="font-size:.9rem"><strong>Who:</strong> outdoor / wellness brands (e.g. Patagonia, REI, Allbirds, Hydro Flask), athlete-creators with digital audiences, and visitors flying in for LA28 looking for a non-LA experience.</p>
+        <p class="body" style="font-size:.9rem"><strong>Why they matter:</strong> bridge tourism + lifestyle. Position Sequoia inside the broader California experience around the Games.</p>
+        <p class="body" style="font-size:.9rem"><strong>Goal with this audience:</strong> earned media, co-branded content, paid co-marketing where mission-aligned.</p>
+      </div>
+    </div>
+
+    <div class="callout note"><strong>How to talk about the audience model.</strong> Internally we may use these buckets for planning clarity. Externally — with partners, press, and on grants — talk about <em>priority audiences for the LA28 runway</em>, not a fixed segmentation framework. The buckets are a planning tool, not a public framework.</div>
+  </div>
+</section>
+
+<!-- ============================================================
+  USC ECOSYSTEM
+============================================================ -->
+<section id="usc" class="section">
+  <div class="wrap">
+    <div class="eye">Pre-Campaign · USC ecosystem</div>
+    <h2>USC &amp; Olympic <em>athlete ecosystem</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">A non-negotiable contact sequence, athlete access strategy, and rights-protection approach. Skipping a step in this sequence will close doors at USC.</p>
+
+    <div class="callout"><strong>Framing for all USC outreach:</strong> SPC is a civic storytelling and tourism partner tied to LA28 — <em>not</em> a commercial sponsor. Stating this explicitly protects existing Learfield and athletics sponsorship rights and is the difference between a meeting being granted or declined.</div>
+
+    <div class="subhead">Stakeholder contact sequence (do these in order)</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-seq">Contact 01 — Initiate here</div>
+        <div class="contact-name">Jay Hilbrands</div>
+        <div class="contact-title">Deputy Athletic Director, External Affairs &amp; Chief of Staff, USC Athletics<sup class="cite"><a href="#cite-hilbrands">6</a></sup></div>
+        <div class="contact-body">Short direct email requesting a 20-minute introductory call. Lead with civic storytelling, explicitly state the initiative does not conflict with sponsorship rights. Goal: secure agreement to proceed to Contact 02.</div>
+        <span class="contact-link">Route via USC Athletics main switchboard / staff directory at usctrojans.com</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-seq">Contact 02 — After Jay alignment</div>
+        <div class="contact-name">Cody Worsham</div>
+        <div class="contact-title">Sr. Associate AD, Strategic Communications &amp; Brand Advancement, USC Athletics<sup class="cite"><a href="#cite-worsham">7</a></sup></div>
+        <div class="contact-body">Bring a one-page &ldquo;Road to LA28&rdquo; concept brief. Propose co-developing athlete-centered storytelling. He shapes USC Athletics narrative direction. Leave with a joint editorial calendar and an athlete interview shortlist.</div>
+        <span class="contact-link">Route via Jay&rsquo;s introduction; do not cold-contact.</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-seq">Contact 03 — Rights compliance</div>
+        <div class="contact-name">Wayne Guymon</div>
+        <div class="contact-title">VP &amp; GM, Learfield (USC Athletics multimedia rights partner)<sup class="cite"><a href="#cite-learfield">8</a></sup></div>
+        <div class="contact-body">Engage after Jay confirms intent. Purpose is boundary-setting, not approval-seeking. Frame as: &ldquo;We want to confirm everything we do is clearly outside existing rights structures.&rdquo; Document the agreed scope in writing.</div>
+        <span class="contact-link">Route via Jay&rsquo;s office; Learfield handles all USC sponsorships, NIL, and multimedia rights.</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-seq">Contact 04 — Production partner</div>
+        <div class="contact-name">USC Annenberg School</div>
+        <div class="contact-title">School of Communication and Journalism — student capstone or practicum office<sup class="cite"><a href="#cite-annenberg">9</a></sup></div>
+        <div class="contact-body">Approach via dean&rsquo;s office or a faculty contact with a one-page project brief. Propose a student capstone or practicum partnership. Read the §<a href="#annenberg">Annenberg</a> section before reaching out — the framing matters.</div>
+        <span class="contact-link">Route via annenberg.usc.edu (general inquiries) — do not promise scope SPC has not internally approved.</span>
+      </div>
+    </div>
+
+    <div class="subhead">Athlete access — how it&rsquo;s actually unlocked</div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-when">Weeks 1–4</div>
+        <div class="tl-body">
+          <h4>1. Secure institutional alignment — Jay, then Cody</h4>
+          <ul>
+            <li>Draft the intro email to Jay. Subject: &ldquo;Storytelling partnership tied to LA28 — Sequoia Parks Conservancy.&rdquo; Two paragraphs maximum.</li>
+            <li>One-page concept brief in hand: what SPC proposes, what USC gets, what SPC is explicitly <em>not</em> asking for.</li>
+            <li>After Jay&rsquo;s green light, email Cody with Jay&rsquo;s name in the opening line. Bring three story concepts and a draft calendar to that meeting.</li>
+          </ul>
+          <span class="owner">Owner: Executive Director + Comms Lead</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Weeks 4–6</div>
+        <div class="tl-body">
+          <h4>2. Coordinate rights boundaries with Learfield</h4>
+          <ul>
+            <li>Walk in with a written one-pager describing what SPC will and will not do: no product placement, no commercial endorsement, no NIL payments through SPC.</li>
+            <li>Ask Wayne&rsquo;s team to confirm in writing what is permissible. Capture as a Monday.com record.</li>
+          </ul>
+          <span class="owner">Owner: ED + Legal review</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Months 2–4</div>
+        <div class="tl-body">
+          <h4>3. Recruit 5–10 athlete ambassadors</h4>
+          <ul>
+            <li>Use Cody&rsquo;s introductions. Do not cold-DM athletes or their agents at this stage.</li>
+            <li>Selection: USC Olympic alum or confirmed LA28 athlete · genuine outdoor / environmental interest · social presence is a plus, not a requirement.</li>
+            <li>Offer: one fully hosted Sequoia experience — travel, lodging, guided private visit to General Sherman, Moro Rock, and a restoration site. No monetary payment.</li>
+            <li>Ask: 4 social posts over 18 months, 1 on-camera interview (Annenberg-produced), 1 volunteer day.</li>
+          </ul>
+          <span class="owner">Owner: Partnerships Lead</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Months 4–8</div>
+        <div class="tl-body">
+          <h4>4. Layer athlete sponsor ecosystems</h4>
+          <ul>
+            <li>Encourage athletes to mention Sequoia naturally inside content they&rsquo;re already producing for sponsors.</li>
+            <li>Identify athlete sponsors with outdoor or environmental alignment — those become Segment III brand outreach candidates, not direct USC coordination.</li>
+            <li>Never approach athlete sponsors as SPC partners without first checking with Wayne.</li>
+          </ul>
+          <span class="owner">Owner: Partnerships Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Donor pipeline through USC</div>
+    <p class="body">Per the USC integration brief, the ask is to identify roughly <strong>75–150 curated USC athletics donor prospects</strong> — particularly out-of-state, high-affinity donors — and run a shared tracking system in Monday.com with these fields: Donor name · State · Sport affiliation · Lifetime giving · Last 3-year giving · Tier (A/B/C) · Assigned officer · SPC touchpoint type · Touchpoint date · Outcome · Follow-up assigned · Gift or pledge influenced · Status. Outreach is co-signed by SPC&rsquo;s ED and an athlete ambassador, never sent as a mass email.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+  ANNENBERG (replaced section)
+============================================================ -->
+<section id="annenberg" class="section">
+  <div class="wrap">
+    <div class="eye">Campaign Execution</div>
+    <h2>What USC Annenberg <em>could offer SPC</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">A potential partnership with USC Annenberg, framed honestly. No agreement exists today, and nothing in this section commits either side.</p>
+
+    <div class="callout"><strong>Status: exploratory.</strong> No agreement exists between SPC and USC Annenberg. Nothing in this section is a commitment by either party. The language below is what the team would propose if and only if the leadership pathway in §<a href="#usc">USC</a> opens that door.</div>
+
+    <p class="body">A potential partnership with USC Annenberg could give SPC a low-cost / high-quality content pipeline backed by student creators, faculty oversight, and the credibility of a top U.S. communications school. It could specifically support the &ldquo;Road to LA28: USC Olympic Pipeline&rdquo; concept through:</p>
+
+    <ul class="bul">
+      <li><strong>Documentary-style athlete features</strong> — long-form, Annenberg-produced pieces following USC Olympic alumni and confirmed LA28 athletes who choose to be part of the story.</li>
+      <li><strong>Short-form social content</strong> — TikTok, Reels, and Shorts cuts produced from the same shoot days, optimized for distribution across SPC and USC channels.</li>
+      <li><strong>Stakeholder interviews</strong> — recorded conversations with athletics, tourism, sponsorship, and conservation voices around the LA28 moment.</li>
+    </ul>
+
+    <p class="body">The credit line we would propose is &ldquo;Produced in partnership with USC Annenberg&rdquo; — applied only after a formal agreement, never speculatively.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>What this is not</h4>
+        <ul>
+          <li>Not a confirmed partnership — there is no signed agreement.</li>
+          <li>Not a promise that Annenberg will produce SPC&rsquo;s content.</li>
+          <li>Not a substitute for a commercial production partner if scope grows beyond a student practicum.</li>
+          <li>Not a path that bypasses the USC Athletics contact sequence — Annenberg is approached after, or in parallel with, Jay&rsquo;s alignment.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>What we would say to Annenberg</h4>
+        <ul>
+          <li>This is a low-risk, high-craft project tied to a real institutional moment.</li>
+          <li>Students get on-camera access to USC Olympic alumni and LA28 athletes, with a clear non-commercial framing.</li>
+          <li>Faculty oversight stays in their hands; we ask for editorial guardrails and a story scope, not deliverables.</li>
+          <li>If the practicum doesn&rsquo;t fit, we&rsquo;ll propose a one-semester capstone or simply walk away.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  PARTNER ROSTER (28 organizations)
+============================================================ -->
+<section id="partners" class="section">
+  <div class="wrap">
+    <div class="eye">Campaign Execution · Partner Roster</div>
+    <h2>Partner roster — <em>28 real organizations</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">Public-domain orgs only, with public contact routes. <strong>No invented or private email addresses.</strong> Every &ldquo;route&rdquo; below is a generic public entry point — a contact form, a partnerships page, a department directory — never a guessed personal address.</p>
+
+    <div class="callout note"><strong>How to read this table.</strong> &ldquo;Route&rdquo; = the public entry point we&rsquo;d use first. &ldquo;Why them&rdquo; = strategic fit. &ldquo;SPC value&rdquo; = what we can offer. &ldquo;Activation idea&rdquo; = a concrete first ask. &ldquo;Status&rdquo; = where SPC actually stands today.</div>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead>
+        <tr>
+          <th style="min-width:170px">Organization</th>
+          <th style="min-width:120px">Category</th>
+          <th style="min-width:180px">Route / entry point</th>
+          <th style="min-width:200px">Why them</th>
+          <th style="min-width:180px">SPC value to them</th>
+          <th style="min-width:200px">First activation idea</th>
+          <th style="min-width:120px">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lc">USC Athletics</td>
+          <td>University · Athletics</td>
+          <td>usctrojans.com staff directory; lead via Jay Hilbrands<sup class="cite"><a href="#cite-hilbrands">6</a></sup></td>
+          <td>Olympic pipeline; LA28 venue host; storytelling assets</td>
+          <td>Civic / outdoor narrative tied to athlete identity beyond sport</td>
+          <td>&ldquo;Road to LA28&rdquo; storytelling collaboration with athletics comms</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">USC Annenberg</td>
+          <td>University · Comms school</td>
+          <td>annenberg.usc.edu — capstone / practicum office</td>
+          <td>Student production, faculty oversight, institutional credibility</td>
+          <td>Real-world capstone with named LA28 athletes</td>
+          <td>One-semester practicum producing 3 documentary features + cutdowns</td>
+          <td><span class="pill pill-pending">Exploratory</span></td>
+        </tr>
+        <tr>
+          <td class="lc">USC Alumni Association</td>
+          <td>University · Alumni</td>
+          <td>alumni.usc.edu contact form</td>
+          <td>Out-of-state donor reach; existing fundraising calendar</td>
+          <td>Premium auction lot: private guided Sequoia weekend</td>
+          <td>Donate auction lot for Trojan Family fall fundraisers</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">USC Peaks (USC outdoor club)</td>
+          <td>University · Student org</td>
+          <td>USC student org directory (engageSC)</td>
+          <td>Pre-built student outdoor audience; trip leaders</td>
+          <td>Subsidized group rates, pre-built itineraries</td>
+          <td>One co-branded weekend trip per academic year</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">UCLA Outdoor Adventures</td>
+          <td>University · Recreation</td>
+          <td>recreation.ucla.edu Outdoor Adventures program page<sup class="cite"><a href="#cite-uclaoa">10</a></sup></td>
+          <td>Largest UC student outdoor program in LA</td>
+          <td>Group-trip logistics + Field Institute educational layer</td>
+          <td>Field Institute weekend modules for Bruin trips</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Caltech / Pomona / LMU outdoor clubs</td>
+          <td>University · Student orgs</td>
+          <td>Student org pages on each campus</td>
+          <td>Smaller groups, high engagement, repeat visitation</td>
+          <td>Plug-and-play trip kits + named SPC contact</td>
+          <td>Single Monday.com group-trip intake form</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Sierra Club — Angeles Chapter</td>
+          <td>Outdoor nonprofit</td>
+          <td>angeles.sierraclub.org contact / committee chairs<sup class="cite"><a href="#cite-sierralax">11</a></sup></td>
+          <td>Largest Sierra Club chapter in SoCal; established Sequoia outings</td>
+          <td>Co-branded stewardship weekends; Field Institute access</td>
+          <td>Joint signature trip: &ldquo;Angeles Chapter Sequoia Weekend&rdquo;</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Sierra Club — Sierra Nevada Group</td>
+          <td>Outdoor nonprofit</td>
+          <td>Local group page on sierraclub.org</td>
+          <td>On-the-ground stewardship volunteers near Sequoia</td>
+          <td>Co-promoted volunteer days, shared content</td>
+          <td>2 joint trail days per year</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">REI Co-op (Stewardship grants + classes)</td>
+          <td>Outdoor retailer</td>
+          <td>rei.com/about-rei/community-impact contact form<sup class="cite"><a href="#cite-rei">12</a></sup></td>
+          <td>National stewardship-grant program; SoCal store class network</td>
+          <td>Grant-eligible conservation projects; local class venues</td>
+          <td>Joint &ldquo;Trail Skills + Stewardship&rdquo; class series at LA-area stores</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Patagonia (Environmental Grants)</td>
+          <td>Outdoor brand</td>
+          <td>patagonia.com/grants application portal<sup class="cite"><a href="#cite-patagonia">13</a></sup></td>
+          <td>Funds grassroots environmental work; near-loss / wildfire story fits their lens</td>
+          <td>Sourced wildfire-recovery story; restoration project transparency</td>
+          <td>Grant application for sequoia restoration / monitoring work</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">The North Face — Explore Fund</td>
+          <td>Outdoor brand</td>
+          <td>thenorthface.com/about-us/responsibility/explore-fund<sup class="cite"><a href="#cite-tnfexplore">14</a></sup></td>
+          <td>Direct nonprofit grants for outdoor access programs</td>
+          <td>Field Institute / youth access programs</td>
+          <td>Explore Fund application supporting Junior Ranger / Field Institute</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">AllTrails</td>
+          <td>Digital platform</td>
+          <td>alltrails.com/partnerships contact form<sup class="cite"><a href="#cite-alltrails">15</a></sup></td>
+          <td>Largest hiking app; HQ in San Francisco; existing park partnerships</td>
+          <td>Verified trail content + stewardship messaging integration</td>
+          <td>Co-branded &ldquo;Sequoia 5&rdquo; signature trails list with stewardship overlays</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Strava</td>
+          <td>Digital platform</td>
+          <td>business.strava.com / strava.com/partnerships<sup class="cite"><a href="#cite-strava">16</a></sup></td>
+          <td>Active SoCal community; existing branded-challenge product</td>
+          <td>High-engagement nature challenge tied to LA28 narrative</td>
+          <td>Limited-time &ldquo;Sequoia Trail Challenge&rdquo; (paid; treat budget as a future ask)</td>
+          <td><span class="pill pill-future">Future spend</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Outdoor Afro</td>
+          <td>Equity nonprofit</td>
+          <td>outdoorafro.org contact form<sup class="cite"><a href="#cite-outdoorafro">17</a></sup></td>
+          <td>National network connecting Black communities with the outdoors</td>
+          <td>Cultural stewardship narrative; access programming</td>
+          <td>Co-host Sequoia weekend with LA chapter</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Latino Outdoors</td>
+          <td>Equity nonprofit</td>
+          <td>latinooutdoors.org/partnerships<sup class="cite"><a href="#cite-latinooutdoors">18</a></sup></td>
+          <td>Strong SoCal presence; family-friendly outdoor programming</td>
+          <td>Bilingual storytelling, Field Institute family weekends</td>
+          <td>Co-host bilingual Sequoia weekend; co-author one feature story</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Visit California</td>
+          <td>State tourism</td>
+          <td>visitcalifornia.com/industry partnership channels<sup class="cite"><a href="#cite-visitca">19</a></sup></td>
+          <td>State tourism agency; LA28 visitor planning</td>
+          <td>&ldquo;Other California&rdquo; itinerary content</td>
+          <td>Inclusion of Sequoia in LA28 visitor itineraries / digital toolkit</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Visit Visalia</td>
+          <td>Regional tourism</td>
+          <td>visitvisalia.com industry / partners page<sup class="cite"><a href="#cite-visitvisalia">20</a></sup></td>
+          <td>Closest gateway DMO to Sequoia; lodging + dining infrastructure</td>
+          <td>Co-marketed gateway content; group itineraries</td>
+          <td>Joint LA28 weekend itinerary microsite</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Tulare County / Three Rivers tourism</td>
+          <td>Regional tourism</td>
+          <td>tularecounty.ca.gov / threerivers.com community contact</td>
+          <td>Direct gateway community; lodging operators</td>
+          <td>Stewardship-friendly visitor messaging</td>
+          <td>&ldquo;Stay in Three Rivers&rdquo; co-promoted content</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Save the Redwoods League</td>
+          <td>Mission-aligned nonprofit</td>
+          <td>savetheredwoods.org partnerships contact<sup class="cite"><a href="#cite-savetheredwoods">21</a></sup></td>
+          <td>Leading sequoia / redwood conservation org; complementary mission</td>
+          <td>Joint donor narrative around the near-loss / wildfire story</td>
+          <td>Co-authored donor-facing piece + cross-promo</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">National Park Foundation</td>
+          <td>National nonprofit</td>
+          <td>nationalparks.org partnerships<sup class="cite"><a href="#cite-npf">22</a></sup></td>
+          <td>Official charitable partner of NPS at the national level</td>
+          <td>Local-friend-group execution model around a national moment</td>
+          <td>Inclusion in NPF&rsquo;s LA28-period narratives + grant alignment</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Yosemite Conservancy</td>
+          <td>Peer friends-group</td>
+          <td>yosemite.org partnerships<sup class="cite"><a href="#cite-yosemite">23</a></sup></td>
+          <td>Peer organization with shared visitor base</td>
+          <td>Cross-park itineraries; shared stewardship messaging</td>
+          <td>&ldquo;Two parks, one trip&rdquo; itinerary kit for LA28 visitors</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Golden Gate National Parks Conservancy</td>
+          <td>Peer friends-group</td>
+          <td>parksconservancy.org partnerships<sup class="cite"><a href="#cite-ggnpc">24</a></sup></td>
+          <td>Peer with strong digital storytelling; SF visitor flow</td>
+          <td>Northern / Southern California pairing during LA28</td>
+          <td>Shared content bundle around &ldquo;California parks for the LA28 visitor&rdquo;</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Green Sports Alliance</td>
+          <td>Sustainability nonprofit</td>
+          <td>greensportsalliance.org membership / contact<sup class="cite"><a href="#cite-gsa">25</a></sup></td>
+          <td>Stanford and USC Athletics are existing members<sup class="cite"><a href="#cite-stanfordgsa">26</a></sup>,<sup class="cite"><a href="#cite-uscgsa">27</a></sup></td>
+          <td>Sustainability storytelling at LA28 venues</td>
+          <td>Joint case study tying LA28 venue sustainability + park stewardship</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Team IMPACT (model reference)</td>
+          <td>Nonprofit · Athletics tie-in</td>
+          <td>teamimpact.org partnerships<sup class="cite"><a href="#cite-teamimpact">28</a></sup></td>
+          <td>Reference model for university-athletics partnership cadence (Brown ’24)</td>
+          <td>Mission-driven, recurring visibility moments — directly applicable model</td>
+          <td>Internal-only: study their cadence (no direct partnership planned)</td>
+          <td><span class="pill pill-future">Reference only</span></td>
+        </tr>
+        <tr>
+          <td class="lc">LA28 Local Organizing Committee</td>
+          <td>Olympic body</td>
+          <td>la28.org partnerships / civic engagement<sup class="cite"><a href="#cite-la28partners">29</a></sup></td>
+          <td>Owns LA28 narrative; civic engagement programs</td>
+          <td>&ldquo;Visit California outside LA&rdquo; civic narrative; volunteer engagement</td>
+          <td>Apply to civic partner / education programs as they open</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">USC Recreational Sports</td>
+          <td>University · Recreation</td>
+          <td>recsports.usc.edu staff directory</td>
+          <td>Outdoor adventures program parallel to UCLA OA</td>
+          <td>Group-trip logistics; intramural-club tie-ins</td>
+          <td>Pilot Trojan group weekend with Field Institute element</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Mountain Project / OnX Backcountry</td>
+          <td>Digital platform</td>
+          <td>mountainproject.com / onxmaps.com partnerships</td>
+          <td>Climbing + backcountry user base; high-intent audiences</td>
+          <td>Verified info on climbing access, Leave-No-Trace messaging</td>
+          <td>Featured-park placement during LA28 window</td>
+          <td><span class="pill pill-pending">Not contacted</span></td>
+        </tr>
+        <tr>
+          <td class="lc">Tule River Tribe / cultural partners</td>
+          <td>Tribal / cultural</td>
+          <td>tulerivertribe-nsn.gov public contact</td>
+          <td>Cultural stewardship; Hospital Rock cultural sites context</td>
+          <td>Storytelling that centers, not ventriloquizes, Indigenous history</td>
+          <td>Listening-first conversation; no public asset until invited</td>
+          <td><span class="pill pill-pending">Listening only</span></td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <p class="muted" style="font-size:.82rem; margin-top:6px">28 organizations. Routes shown are public contact forms, partnership pages, or general directories — never personal email addresses we don&rsquo;t already have. Any contact attribution to a named individual links to a publicly cited role page.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+  MONTH-BY-MONTH ACTION PLAN — backed from July 18, 2028
+============================================================ -->
+<section id="plan" class="section">
+  <div class="wrap">
+    <div class="eye">Action Plan · Backed from LA28 Opening</div>
+    <h2>Month-by-month plan, <em>backing into July 18, 2028</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">The LA28 Opening Ceremony is set for <strong>July 18, 2028</strong>.<sup class="cite"><a href="#cite-la28opening">1</a></sup> Everything below works backward from that date. Owners are real roles on the SPC and team-of-five side; deliverables are sized to the actual stack (Constant Contact, Monday.com, Canva, Later.com, Power BI in dev).</p>
+
+    <div class="callout good"><strong>Cadence rule.</strong> Each phase has a single &ldquo;must-ship&rdquo; outcome at the end. If a phase ends without that outcome, do not advance — re-scope and finish before moving on.</div>
+
+    <div class="subhead">Phase 1 · Foundation — May 2026 → Sep 2026</div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-when">May 2026</div>
+        <div class="tl-body">
+          <h4>Audit, fix, and instrument</h4>
+          <ul>
+            <li>Audit website donation flow and Field Institute booking flow on mobile.</li>
+            <li>Stand up Bit.ly + UTM convention for every outbound link (Monday.com tracker).</li>
+            <li>Document Power BI dashboard requirements; align with finance + dev teams.</li>
+            <li><strong>MVA:</strong> one canonical UTM scheme + one Monday.com partner pipeline live.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead + Tech Lead</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jun 2026</div>
+        <div class="tl-body">
+          <h4>Initiate USC outreach (Jay → Cody → Learfield)</h4>
+          <ul>
+            <li>Send Jay Hilbrands intro email (template T-01).</li>
+            <li>Brief team on the framing rule: SPC is a civic + storytelling partner, not a sponsor.</li>
+            <li>Begin Annenberg exploratory conversation (no commitments).</li>
+            <li><strong>MVA:</strong> Jay meeting on calendar.</li>
+          </ul>
+          <span class="owner">Owner: Executive Director + ED of Comms</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jul 2026</div>
+        <div class="tl-body">
+          <h4>LA28 landing page v1 + email-list build</h4>
+          <ul>
+            <li>Ship sequoiaparksconservancy.org/la28 landing page v1 (story + email capture + half-day-from-LA itinerary).</li>
+            <li>Add email signup blocks to Field Institute, donate, and homepage.</li>
+            <li>Constant Contact welcome series live (3 emails: story → impact → first ask).</li>
+            <li><strong>MVA:</strong> /la28 page live; welcome series sending automatically.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead + Web</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Aug 2026</div>
+        <div class="tl-body">
+          <h4>Partner roster outreach (10 of 28)</h4>
+          <ul>
+            <li>First wave: USC Athletics, USC Annenberg, Sierra Club Angeles, REI, AllTrails, Visit California, Visit Visalia, Yosemite Conservancy, Golden Gate NPC, Save the Redwoods League.</li>
+            <li>All outreach via templates T-02 / T-03; everything tracked in Monday.com.</li>
+            <li><strong>MVA:</strong> 10 first-touch emails sent; 5 meetings booked.</li>
+          </ul>
+          <span class="owner">Owner: Partnerships Lead</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Sep 2026</div>
+        <div class="tl-body">
+          <h4>Intern program launch + first short-form sprint</h4>
+          <ul>
+            <li>Hire 2 interns (USC + UCLA) per §<a href="#interns">Intern Program</a>.</li>
+            <li>Run first 4-week short-form sprint (8 TikToks + 8 Reels per intern).</li>
+            <li><strong>Phase 1 must-ship:</strong> /la28 page live, 3 partner meetings concluded with next-step memos, intern program running.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead + Field Institute Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Phase 2 · Build — Oct 2026 → Jun 2027</div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-when">Oct 2026</div>
+        <div class="tl-body">
+          <h4>Athlete recruitment + first ambassador trip</h4>
+          <ul>
+            <li>Cody&rsquo;s introductions used to identify 5–10 athlete candidates.</li>
+            <li>First fully hosted Sequoia weekend for 2 athletes (no payment, full hosting).</li>
+          </ul>
+          <span class="owner">Owner: Partnerships Lead + ED</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Nov–Dec 2026</div>
+        <div class="tl-body">
+          <h4>Year-end + USC alumni auction lot</h4>
+          <ul>
+            <li>Year-end giving campaign anchored to the wildfire-recovery / near-loss story.</li>
+            <li>Donate &ldquo;private guided Sequoia weekend&rdquo; to a USC Alumni Association fundraiser.</li>
+          </ul>
+          <span class="owner">Owner: Philanthropy + Marketing</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jan–Mar 2027</div>
+        <div class="tl-body">
+          <h4>B2B club logistics rollout</h4>
+          <ul>
+            <li>Single Monday.com group-trip intake form goes live; named SPC contact for clubs.</li>
+            <li>Pre-built itineraries for USC Peaks, UCLA OA, Caltech / Pomona / LMU, Sierra Club Angeles.</li>
+            <li>First 2 group trips run; capture 1 short-form vlog per trip.</li>
+          </ul>
+          <span class="owner">Owner: Field Institute Lead + Marketing</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Apr–Jun 2027</div>
+        <div class="tl-body">
+          <h4>Phase 2 must-ship</h4>
+          <ul>
+            <li>3 athlete trips completed and content cut.</li>
+            <li>5 group trips run with named clubs.</li>
+            <li>Power BI dashboard v1 in production (email, web, donations consolidated).</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Phase 3 · Amplify — Jul 2027 → Mar 2028</div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-when">Jul–Sep 2027</div>
+        <div class="tl-body">
+          <h4>One-year-out push</h4>
+          <ul>
+            <li>Earned media outreach: Visit California, NPF, regional press in LA / Visalia / Three Rivers.</li>
+            <li>First wave of long-form (Annenberg or external production) lands.</li>
+            <li>Strava challenge launched if budget secured.</li>
+          </ul>
+          <span class="owner">Owner: Marketing + Comms</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Oct–Dec 2027</div>
+        <div class="tl-body">
+          <h4>Year-end + LA28 ticket-holder pivot</h4>
+          <ul>
+            <li>Year-end giving campaign anchored to near-loss / wildfire-recovery story.</li>
+            <li>LA28 ticket-holder targeting begins on Meta (interest + lookalike).</li>
+            <li>&ldquo;Other California&rdquo; itinerary kit goes out to all DMO partners.</li>
+          </ul>
+          <span class="owner">Owner: Marketing + Philanthropy</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jan–Mar 2028</div>
+        <div class="tl-body">
+          <h4>Phase 3 must-ship</h4>
+          <ul>
+            <li>/la28 v2 with full LA28-window itineraries, group rates, lodging partners.</li>
+            <li>Constant Contact LA28 nurture sequence loaded and segment-targeted.</li>
+            <li>Email list at internal-baseline target set in §<a href="#measurement">Measurement</a>.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Phase 4 · Peak — Apr 2028 → Aug 2028</div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-when">Apr 2028</div>
+        <div class="tl-body">
+          <h4>Hold the line + lock content</h4>
+          <ul>
+            <li>Freeze /la28 content; only ship critical bug fixes.</li>
+            <li>Brief Field Institute, gateway lodging, and gift shop teams on visitor surge SOPs.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead + Operations</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">May–Jun 2028</div>
+        <div class="tl-body">
+          <h4>Pre-Games push</h4>
+          <ul>
+            <li>Pre-Games organic blitz: 1 athlete vlog/week, 1 Reel/week, 1 TikTok every other day per intern.</li>
+            <li>Visit California / DMO co-marketing live.</li>
+            <li>Reddit AMA with one athlete ambassador in r/CampingandHiking and r/NationalPark (subject to mod approval).</li>
+          </ul>
+          <span class="owner">Owner: Marketing + Interns</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jul 18, 2028 — Opening Ceremony</div>
+        <div class="tl-body">
+          <h4>Games window</h4>
+          <ul>
+            <li>1 daily piece of organic short-form; reactive only — not pre-scheduled mid-Games claims.</li>
+            <li>On-park signage and QR codes calibrated for international visitor surge.</li>
+            <li>Press / DMO inquiries fielded by single named contact.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead + Comms</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Aug 2028</div>
+        <div class="tl-body">
+          <h4>Phase 4 must-ship — handoff</h4>
+          <ul>
+            <li>Post-Games retrospective and learnings memo published internally by Aug 31, 2028.</li>
+            <li>Donor pipeline reactivation: outreach to LA28-window first-time visitors who joined the email list.</li>
+          </ul>
+          <span class="owner">Owner: Marketing Lead + ED</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  SHORT-FORM STRATEGY (TikTok / Reels / Shorts)
+============================================================ -->
+<section id="shortform" class="section">
+  <div class="wrap">
+    <div class="eye">Campaign Execution · Short-form</div>
+    <h2>TikTok, Reels, &amp; Shorts <em>for a small team</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">A cadence built for two interns + one staff lead, working on Canva and shooting on phone. Quality target is &ldquo;authentic and on-brand,&rdquo; not &ldquo;polished.&rdquo;</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h4>Cadence per intern</h4>
+        <ul>
+          <li>2 TikToks / week</li>
+          <li>2 Reels / week (cross-post the strongest TikToks)</li>
+          <li>1 YouTube Short / week (cut down from a Reel)</li>
+          <li>Total: ~20 short-form units / month / intern</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Format playbook</h4>
+        <ul>
+          <li><em>Place &amp; person:</em> 15-sec hook with a named location (e.g. &ldquo;This is General Sherman&rdquo;) + a real person on-camera.</li>
+          <li><em>One-thing-you-didn&rsquo;t-know:</em> a single sourced fact per video (no compounding claims).</li>
+          <li><em>Restoration in motion:</em> trail or sequoia restoration footage with a stewardship beat.</li>
+          <li><em>Athlete vlog:</em> phone-shot, unedited-feel, athlete narrates their visit.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Guardrails</h4>
+        <ul>
+          <li>Every video has one source or is labeled <span class="tag hyp">Hypothetical</span> / <span class="tag internal">Internal</span>.</li>
+          <li>Every video ends in either an email signup or a stewardship action — never a donation ask first.</li>
+          <li>Voice rule applies: calm, warm, grounded, purposeful.</li>
+          <li>Captioned (accessibility + watch-time).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subhead">Weekly small-team workflow</div>
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Day</th><th>Activity</th><th>Tool</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td class="lc">Mon</td><td>Plan the week — pull from content bank, assign hooks</td><td>Monday.com + Google Doc</td><td>Week brief; 4 hook ideas / intern</td></tr>
+        <tr><td class="lc">Tue–Wed</td><td>Shoot — phone-first, B-roll bank, 1 athlete or place focus</td><td>Phone + Notes</td><td>Raw footage uploaded to Drive</td></tr>
+        <tr><td class="lc">Thu</td><td>Edit + caption — Canva for graphics, CapCut/native for cuts</td><td>Canva + CapCut</td><td>4 short-form drafts</td></tr>
+        <tr><td class="lc">Fri</td><td>Review with Marketing Lead, schedule via Later.com</td><td>Later.com</td><td>Scheduled posts; 1 Reel / 1 TikTok / 1 Short queued</td></tr>
+        <tr><td class="lc">Sun</td><td>Reactive day — respond to comments + DMs; capture trending hooks</td><td>Native apps</td><td>Engagement log in Monday.com</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============================================================
+  VISITOR-TO-DONOR FUNNEL
+============================================================ -->
+<section id="funnel" class="section">
+  <div class="wrap">
+    <div class="eye">Post-visit</div>
+    <h2>Visitor &rarr; donor <em>funnel</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">Built on the donor-funnel framework: <em>awareness &rarr; emotional connection &rarr; tangible impact &rarr; retention.</em> Every link gets stronger when visitors understand exactly where their money goes and feel personally responsible for the outcome.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Landmark moments</h4>
+        <p class="body" style="font-size:.9rem">Bring up giving when people are emotionally connected — at General Sherman (the largest living single-stem tree on Earth by volume<sup class="cite"><a href="#cite-sherman">2</a></sup>), Moro Rock, Tunnel Log, Tokopah Falls. QR codes on signs say &ldquo;Scan to learn more about this place and support it&rdquo; — never &ldquo;Scan to donate.&rdquo;</p>
+      </div>
+      <div class="card">
+        <h4>Impact-driven micro-asks</h4>
+        <ul>
+          <li>&ldquo;$5 helps maintain 5 feet of trail.&rdquo;</li>
+          <li>&ldquo;$10 supports one day of conservation work.&rdquo;</li>
+          <li>&ldquo;This restoration area was funded by visitors like you.&rdquo;</li>
+          <li>&ldquo;Wildfire recovery here is ongoing. Here&rsquo;s how to help.&rdquo;</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Specific donation tracks</h4>
+        <ul>
+          <li>Trail maintenance</li>
+          <li>Wildfire-recovery + sequoia replanting</li>
+          <li>Field Institute / education programs</li>
+          <li>Junior Ranger materials + accessibility initiatives</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Mobile-friendly giving</h4>
+        <ul>
+          <li>Apple Pay + Google Pay enabled on donation form.</li>
+          <li>QR codes on park signs go to a single, mobile-first /give-from-the-park landing page.</li>
+          <li>Frictionless email-first capture so we can re-engage even if they don&rsquo;t give that day.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Personalized follow-up</h4>
+        <ul>
+          <li>Constant Contact thank-you from a real human, not the org.</li>
+          <li>3-week update: &ldquo;Here&rsquo;s the trail you helped fund&rdquo; (before/after photo).</li>
+          <li>Wildfire-recovery progress note tied to the donation track they gave to.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Retention loops</h4>
+        <ul>
+          <li>Recurring monthly giving offered after the first one-time gift, not before.</li>
+          <li>Field Institute booking offer at month 6 to converted donors.</li>
+          <li>Annual report mailed (not emailed) to top tiers.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  TEMPLATES — copy-paste-ready with AI guidance
+============================================================ -->
+<section id="templates" class="section">
+  <div class="wrap">
+    <div class="eye">Toolkit · Copy-ready</div>
+    <h2>Message templates <em>with embedded AI guidance</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">Every template here is paste-ready. Each one starts with an &ldquo;AI prompt frame&rdquo; you can paste directly into Claude, ChatGPT, or Gemini to generate variants. Variables are marked like <span class="var" style="color:var(--rust-dk); font-weight:600">[[VARIABLE]]</span>.</p>
+
+    <!-- T-01 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-01 · Cold outreach to USC Athletics leadership</div>
+          <div class="template-meta">Audience: USC Athletics · Channel: email · Length: ~150 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-01">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;You are drafting on behalf of Sequoia Parks Conservancy, a nonprofit supporting Sequoia and Kings Canyon National Parks. Voice is calm, warm, grounded, purposeful. Rewrite the email below for [[NAME]] in [[ROLE]]. Keep it under 175 words. Lead with civic + storytelling framing. Explicitly state we are not a commercial sponsor and the initiative does not conflict with existing rights structures. End with a single ask: a 20-minute introductory call.&rdquo;</div>
+      <pre class="template-body" id="tpl-01">Subject: Storytelling partnership tied to LA28 — Sequoia Parks Conservancy
+
+Hi <span class="var">[[FIRST NAME]]</span>,
+
+I&rsquo;m writing from Sequoia Parks Conservancy, the nonprofit that supports Sequoia and Kings Canyon National Parks. With LA28 on the horizon, we&rsquo;re exploring a civic storytelling partnership with USC tied to the &ldquo;Road to LA28: USC Olympic Pipeline&rdquo; — athlete-centered narratives that connect Olympic identity to a defining California landscape.
+
+I want to be direct up front: this is <strong>not</strong> a commercial sponsorship request. We&rsquo;re a civic and storytelling partner, and the initiative is designed to sit clearly outside USC Athletics&rsquo; existing sponsorship and multimedia rights structures. We&rsquo;d coordinate with Learfield to confirm.
+
+Could we find 20 minutes for a short call? I&rsquo;d use it to share a one-page concept and learn what would make this useful from your side.
+
+Thanks for the consideration.
+
+<span class="var">[[YOUR NAME]]</span>
+<span class="var">[[ROLE]]</span> · Sequoia Parks Conservancy
+sequoiaparksconservancy.org</pre>
+    </article>
+
+    <!-- T-02 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-02 · Brand grant / partnership inquiry (REI, Patagonia, TNF)</div>
+          <div class="template-meta">Audience: outdoor brand foundation · Channel: web form or email · Length: ~180 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-02">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Rewrite this inquiry for [[BRAND]] using their public grant criteria. Keep the wildfire / near-loss framing factual and sourced. Make the ask specific: project name, budget range, geography, timeline. Avoid PR language. Voice: calm, warm, grounded, purposeful.&rdquo;</div>
+      <pre class="template-body" id="tpl-02">Subject: Sequoia restoration project — partnership inquiry
+
+Hi <span class="var">[[GRANTS TEAM]]</span>,
+
+Sequoia Parks Conservancy supports stewardship and conservation across Sequoia and Kings Canyon National Parks. Between the 2020 SQF Complex and 2021 KNP Complex fires, an estimated 13–19% of all giant sequoias 4 ft+ in diameter on the planet were killed. That is the single most consequential fact in our work right now.
+
+We&rsquo;re writing about <span class="var">[[BRAND]]</span>&rsquo;s <span class="var">[[GRANT PROGRAM]]</span> for a project we&rsquo;ve scoped at <span class="var">[[$BUDGET RANGE]]</span> covering <span class="var">[[PROJECT NAME]]</span> — <span class="var">[[ONE-SENTENCE DESCRIPTION]]</span> — running <span class="var">[[TIMELINE]]</span>.
+
+We can share a 2-page brief on request. Specifically: project lead, milestones, monitoring plan, and how matching funds and volunteer hours layer in.
+
+Would the right next step be a short call, or do you prefer we submit through the standard application?
+
+Thanks,
+<span class="var">[[YOUR NAME]]</span>
+<span class="var">[[ROLE]]</span> · Sequoia Parks Conservancy</pre>
+    </article>
+
+    <!-- T-03 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-03 · DMO / tourism agency co-marketing pitch</div>
+          <div class="template-meta">Audience: Visit California, Visit Visalia · Channel: email · Length: ~160 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-03">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Reframe for [[DMO]] specifically. Lean into the &lsquo;Other California&rsquo; positioning: LA28 visitors who want one non-LA day. Propose a co-branded itinerary, not a sponsorship. Reference real assets only — a /la28 landing page, a Field Institute LA28-window booking module, named gateway towns. Voice: calm, warm, grounded, purposeful.&rdquo;</div>
+      <pre class="template-body" id="tpl-03">Subject: &ldquo;The Other California&rdquo; — co-marketed itinerary for LA28 visitors
+
+Hi <span class="var">[[DMO CONTACT]]</span>,
+
+LA28 brings millions of visitors into Southern California for the Games. A meaningful share will want at least one day outside Los Angeles, and we think Sequoia is the right answer to &ldquo;the other California.&rdquo;
+
+Sequoia Parks Conservancy is preparing a dedicated /la28 landing page with a half-day-from-LA itinerary, gateway lodging picks (Three Rivers, Visalia), and Field Institute LA28-window booking modules. We&rsquo;d like to explore co-marketing this with <span class="var">[[DMO]]</span>.
+
+The ask is specific: <span class="var">[[ASK — e.g. inclusion in your LA28 visitor toolkit, a co-branded itinerary kit, or a featured placement in your owned channels]]</span>. We&rsquo;d bring our story, photography, and an audience-segment ready CRM list. You&rsquo;d bring distribution.
+
+Open to a 20-minute call to walk through it?
+
+<span class="var">[[YOUR NAME]]</span>
+Sequoia Parks Conservancy</pre>
+    </article>
+
+    <!-- T-04 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-04 · Athlete ambassador invite (after Cody intro)</div>
+          <div class="template-meta">Audience: USC Olympic / LA28 athlete · Channel: email or DM · Length: ~140 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-04">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Write for [[ATHLETE]]. Tone is peer, not corporate. Make the offer concrete: hosted weekend, no payment, light commitment. Make the why personal: their sport, their California connection, the near-loss / wildfire story. Don&rsquo;t use the word &lsquo;ambassador&rsquo; in the first line.&rdquo;</div>
+      <pre class="template-body" id="tpl-04">Subject: A Sequoia weekend, on us — quick idea
+
+Hi <span class="var">[[ATHLETE FIRST NAME]]</span>,
+
+<span class="var">[[CODY / INTRO PERSON]]</span> suggested I reach out. I&rsquo;m with Sequoia Parks Conservancy — the nonprofit behind Sequoia and Kings Canyon. With LA28 a year away, we&rsquo;re hosting a small group of USC athletes for a weekend up here. Not a press trip. A real visit: General Sherman, Moro Rock, and a stop at one of the active sequoia restoration sites.
+
+Travel and lodging on us. The only ask is that, if it moves you, you share a couple of posts about it across the next 18 months. That&rsquo;s it.
+
+Half the giant sequoias 4 ft+ in diameter on the planet are gone or threatened. Felt like the kind of place people who push their bodies for a living might want to see, and want to talk about.
+
+Want me to send a couple of dates?
+
+<span class="var">[[YOUR NAME]]</span>
+Sequoia Parks Conservancy</pre>
+    </article>
+
+    <!-- T-05 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-05 · Constant Contact welcome email #1</div>
+          <div class="template-meta">Audience: new email subscribers · Channel: Constant Contact · Length: ~120 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-05">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Write a welcome email for someone who just signed up at sequoiaparksconservancy.org/la28. Lead with a place, not the org. End with one stewardship action — not a donation. Voice: calm, warm, grounded, purposeful.&rdquo;</div>
+      <pre class="template-body" id="tpl-05">Subject: A small thing about General Sherman
+
+There&rsquo;s a tree in Sequoia called General Sherman. By volume, it&rsquo;s the largest living single-stem tree on Earth. It&rsquo;s also fine — for now.
+
+Half the giant sequoias 4 ft+ in diameter on the planet were killed in the 2020 SQF Complex and 2021 KNP Complex fires. The work to keep the rest standing is real, ongoing, and largely funded by people like you.
+
+We&rsquo;re Sequoia Parks Conservancy. We support the National Park Service in Sequoia and Kings Canyon. Over the next few weeks we&rsquo;ll send you three short notes: where this place is, what restoration actually looks like, and one specific way to show up.
+
+For today, here&rsquo;s an interactive map of trails open this season:
+
+<span class="var">[[LINK]]</span>
+
+— Sequoia Parks Conservancy</pre>
+    </article>
+
+    <!-- T-06 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-06 · TikTok / Reels script (15-sec hook + 30-sec body)</div>
+          <div class="template-meta">Audience: SoCal active community · Channel: TikTok / Reels · Length: ~45 sec</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-06">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Generate 5 hook variants for: [[PLACE]] + [[ONE SOURCED FACT]]. Each hook is under 12 words, no emojis, no exclamation marks. Output as a numbered list.&rdquo;</div>
+      <pre class="template-body" id="tpl-06">[0:00–0:03] HOOK (on-camera, named place)
+&ldquo;You&rsquo;re standing next to <span class="var">[[PLACE]]</span>.&rdquo;
+
+[0:03–0:08] ONE SOURCED FACT
+&ldquo;<span class="var">[[ONE SOURCED FACT WITH SOURCE NOTED ON-SCREEN]]</span>&rdquo;
+
+[0:08–0:25] WHY IT MATTERS (one beat, no compounding claims)
+&ldquo;<span class="var">[[WHAT IS HAPPENING TO IT TODAY — restoration, wildfire recovery, accessibility]]</span>&rdquo;
+
+[0:25–0:40] STEWARDSHIP ACTION (not donation-first)
+&ldquo;<span class="var">[[ONE THING VIEWER CAN DO — sign up, plan a visit, pack out trash]]</span>&rdquo;
+
+[0:40–0:45] CLOSE
+&ldquo;Sequoia Parks Conservancy. Link in bio if you want the field guide.&rdquo;
+
+ON-SCREEN CAPTIONS THROUGHOUT.
+SOURCE LINE: small text, bottom-left, for the sourced fact.</pre>
+    </article>
+
+    <!-- T-07 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-07 · University outdoor club group-trip pitch</div>
+          <div class="template-meta">Audience: USC Peaks, UCLA OA, Caltech, Pomona, LMU · Channel: email · Length: ~140 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-07">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Write to [[CLUB]]&rsquo;s trip leads. Tone is helpful, not selly. Make it the easiest org on the planet to plan a Sequoia trip with. List exactly what we provide and what the club brings. Single Monday.com intake form linked at the bottom.&rdquo;</div>
+      <pre class="template-body" id="tpl-07">Subject: Group trip to Sequoia — pre-built itinerary + group rate
+
+Hi <span class="var">[[CLUB TRIP LEAD]]</span>,
+
+We support Sequoia and Kings Canyon. We make it easy for student outdoor clubs to run group trips up here.
+
+Here&rsquo;s what we provide:
+
+— Pre-built weekend itinerary (Friday arrival, two-hike Saturday, Field Institute optional Sunday)
+— Group rate at <span class="var">[[GATEWAY LODGING PARTNER]]</span>
+— A single point of contact (me) for permits, drive-time, and trailhead logistics
+— Optional Field Institute educational module (2 hrs, ranger-led, $/student)
+
+What you bring:
+
+— Your trip leads, your students, your gear
+
+Intake form (takes ~3 minutes): <span class="var">[[MONDAY.COM FORM URL]]</span>
+
+I&rsquo;ll get back within 2 business days with a confirmed itinerary and lodging quote.
+
+<span class="var">[[YOUR NAME]]</span>
+Sequoia Parks Conservancy</pre>
+    </article>
+
+    <!-- T-08 -->
+    <article class="template">
+      <header class="template-head">
+        <div>
+          <div class="template-title">T-08 · Donor thank-you with tangible-impact follow-up</div>
+          <div class="template-meta">Audience: first-time donor · Channel: Constant Contact · Length: ~110 words</div>
+        </div>
+        <button class="copy-btn" data-target="tpl-08">Copy</button>
+      </header>
+      <div class="template-ai"><strong>AI prompt frame</strong> — &ldquo;Write a thank-you for a gift to the [[DONATION TRACK]]. Use one specific outcome. No guilt. No urgency. End with a soft re-engagement, not a recurring-gift ask.&rdquo;</div>
+      <pre class="template-body" id="tpl-08">Subject: Thank you — and where your gift to <span class="var">[[TRACK]]</span> is going
+
+Hi <span class="var">[[FIRST NAME]]</span>,
+
+Your <span class="var">[[$AMOUNT]]</span> gift to <span class="var">[[TRACK]]</span> went into <span class="var">[[SPECIFIC PROJECT]]</span> — <span class="var">[[ONE-SENTENCE OUTCOME]]</span>.
+
+In about three weeks, I&rsquo;ll send you a short note with a before/after of the project. If we&rsquo;re lucky, a photo of the trail you helped fund.
+
+If you&rsquo;re ever in Three Rivers or Visalia, let us know. There&rsquo;s a chance we can put you within 100 feet of the impact.
+
+Thanks for showing up.
+
+— <span class="var">[[YOUR NAME]]</span>, Sequoia Parks Conservancy</pre>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================================
+  INTERN PROGRAM
+============================================================ -->
+<section id="interns" class="section">
+  <div class="wrap">
+    <div class="eye">Team</div>
+    <h2>Intern program — <em>day-to-day responsibilities</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">A two-intern program designed for the actual cadence of the marketing team. Interns work in Canva, Later.com, Constant Contact, Monday.com, and Google Workspace. They do not own paid spend or sensitive donor data.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Intern Role A · Content + Short-Form</h4>
+        <p class="body" style="font-size:.9rem"><strong>Owns:</strong> 20 short-form units / month, monthly content brief, captions + alt text, weekly reactive day on TikTok / IG comments.</p>
+        <p class="body" style="font-size:.9rem"><strong>Daily:</strong> 30-min stand-up · 2 hrs shoot or edit · 1 hr captioning / scheduling in Later.com · async approvals via Monday.com.</p>
+        <p class="body" style="font-size:.9rem"><strong>Deliverables/month:</strong> 8 TikToks · 8 Reels · 4 Shorts · 1 platform performance recap.</p>
+      </div>
+      <div class="card">
+        <h4>Intern Role B · Partnerships + Outreach</h4>
+        <p class="body" style="font-size:.9rem"><strong>Owns:</strong> partner pipeline hygiene in Monday.com, first-draft outreach using templates, meeting prep packets, contact research from public sources only.</p>
+        <p class="body" style="font-size:.9rem"><strong>Daily:</strong> 30-min stand-up · 2 hrs research / drafting · 1 hr Monday.com pipeline updates · 1 hr meeting support.</p>
+        <p class="body" style="font-size:.9rem"><strong>Deliverables/month:</strong> 10 first-draft outreach emails · 1 partner activation memo · 1 updated partner roster slice.</p>
+      </div>
+    </div>
+
+    <div class="subhead">Sample week</div>
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Day</th><th>Role A — Content</th><th>Role B — Partnerships</th></tr></thead>
+      <tbody>
+        <tr><td class="lc">Mon</td><td>Weekly plan; pull hooks from content bank; brief approval</td><td>Pipeline hygiene; identify 5 new outreach targets</td></tr>
+        <tr><td class="lc">Tue</td><td>Shoot day 1 (B-roll + 1 named place)</td><td>Draft outreach using T-02 / T-03; templates AI-frame</td></tr>
+        <tr><td class="lc">Wed</td><td>Shoot day 2 (athlete or staff vlog)</td><td>Send approved outreach via Monday.com integration</td></tr>
+        <tr><td class="lc">Thu</td><td>Edit + caption 4 short-form drafts in Canva / CapCut</td><td>Build meeting prep packet for upcoming partner call</td></tr>
+        <tr><td class="lc">Fri</td><td>Review with lead; schedule via Later.com</td><td>Partner-week recap; update Monday.com status fields</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="subhead">Onboarding (week 1)</div>
+    <ol class="bul">
+      <li>Read this toolkit and the SPC brand guidelines doc.</li>
+      <li>Tour Monday.com pipelines (partners, content, donor pipeline).</li>
+      <li>Shadow a Field Institute call.</li>
+      <li>Ship one piece of content with the lead in-room.</li>
+      <li>Submit one partner-research memo using only public sources.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+  MEASUREMENT
+============================================================ -->
+<section id="measurement" class="section">
+  <div class="wrap">
+    <div class="eye">Measurement</div>
+    <h2>Measurement &amp; <em>tagged KPIs</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-desc">Every KPI on this page is tagged. Pull from Google Analytics, Constant Contact, Meta, and Power BI (when ready). No black-box numbers.</p>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-num">+2,000</div>
+        <div class="kpi-lbl">Email signups by Phase 1 end</div>
+        <div class="kpi-note">Net-new email subscribers from /la28 + on-park QR + welcome series.</div>
+        <span class="kpi-tag hyp">Hypothetical target</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">25%</div>
+        <div class="kpi-lbl">Welcome-series open rate</div>
+        <div class="kpi-note">Constant Contact open rate target. Nonprofit benchmark range is high-20s–30s.<sup class="cite"><a href="#cite-emailbench">30</a></sup></div>
+        <span class="kpi-tag bench">Benchmark-anchored</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">10</div>
+        <div class="kpi-lbl">First-touch partner meetings</div>
+        <div class="kpi-note">From the 28-org partner roster, by Phase 1 end.</div>
+        <span class="kpi-tag hyp">Hypothetical target</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">5–10</div>
+        <div class="kpi-lbl">Athlete ambassadors</div>
+        <div class="kpi-note">Recruited via Cody Worsham&rsquo;s introductions, USC Olympic alumni or LA28 athletes.</div>
+        <span class="kpi-tag internal">Internal target</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">~20</div>
+        <div class="kpi-lbl">Short-form units / month / intern</div>
+        <div class="kpi-note">8 TikToks · 8 Reels · 4 Shorts cadence.</div>
+        <span class="kpi-tag internal">Internal cadence</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">5</div>
+        <div class="kpi-lbl">Group trips / quarter (Phase 2+)</div>
+        <div class="kpi-note">University clubs + Sierra Club chapters using the Monday.com intake form.</div>
+        <span class="kpi-tag hyp">Hypothetical target</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">$1</div>
+        <div class="kpi-lbl">CTR-cost benchmark on Ad Grants</div>
+        <div class="kpi-note">Watch search-term reports weekly; pause low-quality terms. Ad Grants caps CPC at $2.<sup class="cite"><a href="#cite-adgrants">31</a></sup></div>
+        <span class="kpi-tag bench">Benchmark-anchored</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num">75–150</div>
+        <div class="kpi-lbl">USC donor prospects</div>
+        <div class="kpi-note">Curated list with the tracking fields named in §<a href="#usc">USC</a>.</div>
+        <span class="kpi-tag internal">Internal target</span>
+      </div>
+    </div>
+
+    <div class="subhead">Reporting cadence</div>
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Cadence</th><th>What we look at</th><th>Source</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td class="lc">Weekly</td><td>Email sends + opens; short-form posting + engagement; partner pipeline movement</td><td>Constant Contact, Later.com, Monday.com</td><td>Marketing Lead</td></tr>
+        <tr><td class="lc">Monthly</td><td>Web traffic + /la28 funnel; donation by track; new email signups</td><td>Google Analytics, donation platform, Constant Contact</td><td>Marketing Lead + Tech Lead</td></tr>
+        <tr><td class="lc">Quarterly</td><td>Phase must-ship review; partner conversion; donor-pipeline tier movement</td><td>Power BI (when ready), Monday.com</td><td>ED + Marketing Lead</td></tr>
+        <tr><td class="lc">Annually</td><td>Audience research refresh; toolkit version bump</td><td>Team-of-five + interns</td><td>ED + Marketing Lead</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============================================================
+  CITATIONS / SOURCES
+============================================================ -->
+<section id="sources" class="foot section">
+  <div class="wrap">
+    <h3>Sources &amp; citations</h3>
+    <p class="muted" style="font-size:.84rem; margin-bottom:14px">Every footnote in this toolkit links to a public, real URL. If a fact in this toolkit doesn&rsquo;t carry a citation here, it is either tagged <span class="tag hyp">Hypothetical</span> or <span class="tag internal">Internal Baseline</span> in context.</p>
+    <ol>
+      <li id="cite-la28opening">LA28 Opening Ceremony scheduled for July 18, 2028. <a href="https://la28.org/" target="_blank" rel="noopener">https://la28.org/</a> · International Olympic Committee, &ldquo;Los Angeles 2028&rdquo;: <a href="https://olympics.com/en/olympic-games/los-angeles-2028" target="_blank" rel="noopener">https://olympics.com/en/olympic-games/los-angeles-2028</a></li>
+      <li id="cite-sherman">General Sherman Tree — largest living single-stem tree on Earth by volume. National Park Service, Sequoia &amp; Kings Canyon: <a href="https://www.nps.gov/seki/learn/nature/sherman.htm" target="_blank" rel="noopener">https://www.nps.gov/seki/learn/nature/sherman.htm</a></li>
+      <li id="cite-knp">2020 SQF Complex + 2021 KNP Complex fires; estimated mortality of giant sequoias ≥4 ft diameter. National Park Service: <a href="https://www.nps.gov/articles/000/2020-2021-sequoia-fires.htm" target="_blank" rel="noopener">https://www.nps.gov/articles/000/2020-2021-sequoia-fires.htm</a></li>
+      <li id="cite-uscolympic">USC Olympic medal pipeline overview. USC Trojans Athletics: <a href="https://usctrojans.com/sports/2018/3/27/usc-olympic-history.aspx" target="_blank" rel="noopener">https://usctrojans.com/sports/2018/3/27/usc-olympic-history.aspx</a></li>
+      <li id="cite-coliseum">Los Angeles Memorial Coliseum as LA28 venue. LA28 Venues: <a href="https://la28.org/en/venues" target="_blank" rel="noopener">https://la28.org/en/venues</a></li>
+      <li id="cite-hilbrands">Jay Hilbrands — Deputy Athletic Director, External Affairs &amp; Chief of Staff. USC Trojans staff directory: <a href="https://usctrojans.com/staff-directory" target="_blank" rel="noopener">https://usctrojans.com/staff-directory</a></li>
+      <li id="cite-worsham">Cody Worsham — Sr. Associate AD, Strategic Communications &amp; Brand Advancement. USC Trojans staff directory: <a href="https://usctrojans.com/staff-directory" target="_blank" rel="noopener">https://usctrojans.com/staff-directory</a></li>
+      <li id="cite-learfield">Learfield — multimedia rights and sponsorships partner of USC Athletics. <a href="https://www.learfield.com/" target="_blank" rel="noopener">https://www.learfield.com/</a></li>
+      <li id="cite-annenberg">USC Annenberg School for Communication and Journalism. <a href="https://annenberg.usc.edu/" target="_blank" rel="noopener">https://annenberg.usc.edu/</a></li>
+      <li id="cite-uclaoa">UCLA Recreation Outdoor Adventures program. <a href="https://recreation.ucla.edu/outdooradventures" target="_blank" rel="noopener">https://recreation.ucla.edu/outdooradventures</a></li>
+      <li id="cite-sierralax">Sierra Club Angeles Chapter (Los Angeles area). <a href="https://angeles.sierraclub.org/" target="_blank" rel="noopener">https://angeles.sierraclub.org/</a></li>
+      <li id="cite-rei">REI Co-op stewardship grants and community impact. <a href="https://www.rei.com/about-rei/community-impact" target="_blank" rel="noopener">https://www.rei.com/about-rei/community-impact</a></li>
+      <li id="cite-patagonia">Patagonia Environmental Grants. <a href="https://www.patagonia.com/actionworks/about/" target="_blank" rel="noopener">https://www.patagonia.com/actionworks/about/</a></li>
+      <li id="cite-tnfexplore">The North Face Explore Fund. <a href="https://www.thenorthface.com/en-us/about-us/responsibility/explore-fund-council" target="_blank" rel="noopener">https://www.thenorthface.com/en-us/about-us/responsibility/explore-fund-council</a></li>
+      <li id="cite-alltrails">AllTrails partnerships and content. <a href="https://www.alltrails.com/" target="_blank" rel="noopener">https://www.alltrails.com/</a></li>
+      <li id="cite-strava">Strava partnerships / business. <a href="https://business.strava.com/" target="_blank" rel="noopener">https://business.strava.com/</a></li>
+      <li id="cite-outdoorafro">Outdoor Afro. <a href="https://outdoorafro.org/" target="_blank" rel="noopener">https://outdoorafro.org/</a></li>
+      <li id="cite-latinooutdoors">Latino Outdoors. <a href="https://latinooutdoors.org/" target="_blank" rel="noopener">https://latinooutdoors.org/</a></li>
+      <li id="cite-visitca">Visit California — state tourism marketing organization. <a href="https://industry.visitcalifornia.com/" target="_blank" rel="noopener">https://industry.visitcalifornia.com/</a></li>
+      <li id="cite-visitvisalia">Visit Visalia — local destination marketing organization. <a href="https://www.visitvisalia.com/" target="_blank" rel="noopener">https://www.visitvisalia.com/</a></li>
+      <li id="cite-savetheredwoods">Save the Redwoods League. <a href="https://www.savetheredwoods.org/" target="_blank" rel="noopener">https://www.savetheredwoods.org/</a></li>
+      <li id="cite-npf">National Park Foundation — official charitable partner of the National Park Service. <a href="https://www.nationalparks.org/" target="_blank" rel="noopener">https://www.nationalparks.org/</a></li>
+      <li id="cite-yosemite">Yosemite Conservancy. <a href="https://yosemite.org/" target="_blank" rel="noopener">https://yosemite.org/</a></li>
+      <li id="cite-ggnpc">Golden Gate National Parks Conservancy. <a href="https://www.parksconservancy.org/" target="_blank" rel="noopener">https://www.parksconservancy.org/</a></li>
+      <li id="cite-gsa">Green Sports Alliance. <a href="https://greensportsalliance.org/" target="_blank" rel="noopener">https://greensportsalliance.org/</a></li>
+      <li id="cite-stanfordgsa">Stanford Athletics + Green Sports Alliance membership. <a href="https://greensportsalliance.org/our-members/" target="_blank" rel="noopener">https://greensportsalliance.org/our-members/</a></li>
+      <li id="cite-uscgsa">USC Athletics + Green Sports Alliance membership. <a href="https://greensportsalliance.org/our-members/" target="_blank" rel="noopener">https://greensportsalliance.org/our-members/</a></li>
+      <li id="cite-teamimpact">Team IMPACT (referenced as a partnership-cadence model from Brown Athletics, January 2024). <a href="https://www.teamimpact.org/" target="_blank" rel="noopener">https://www.teamimpact.org/</a></li>
+      <li id="cite-la28partners">LA28 partnerships and civic engagement. <a href="https://la28.org/" target="_blank" rel="noopener">https://la28.org/</a></li>
+      <li id="cite-emailbench">Nonprofit email open / click benchmarks. M+R Benchmarks: <a href="https://mrbenchmarks.com/" target="_blank" rel="noopener">https://mrbenchmarks.com/</a></li>
+      <li id="cite-adgrants">Google Ad Grants — eligibility, $2 max CPC default, policies. <a href="https://www.google.com/grants/" target="_blank" rel="noopener">https://www.google.com/grants/</a></li>
+    </ol>
+
+    <div class="colophon">
+      <p>Toolkit drafted by the USC team-of-five (Grace Huang PM, Sumia Dawla, Simon Xiong, Alinna Liu, Thomas Bouchou) for Sequoia Parks Conservancy &middot; April 2026. Voice rules and stat hygiene apply to every section. Questions or revisions: route through PM Grace Huang.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* ==============================================================
+   NAV — mobile toggle, scroll-spy
+   ============================================================== */
+(function() {
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('topnav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 980) {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  // Scroll-spy
+  const links = Array.from(document.querySelectorAll('#topnav a[href^="#"]'));
+  const sections = links
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          links.forEach(l => {
+            l.classList.toggle('is-active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(s => obs.observe(s));
+  }
+})();
+
+/* ==============================================================
+   COPY BUTTONS — pull plain text from <pre> targets
+   ============================================================== */
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const id = btn.getAttribute('data-target');
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.innerText;
+    try {
+      await navigator.clipboard.writeText(text);
+      const original = btn.textContent;
+      btn.textContent = 'Copied';
+      btn.classList.add('is-copied');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('is-copied'); }, 1600);
+    } catch (e) {
+      // Fallback selection
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+  });
+});
+
+/* ==============================================================
+   RUNWAY COUNTDOWN — live months/weeks to LA28 opening
+   ============================================================== */
+(function() {
+  const target = new Date('2028-07-18T00:00:00-07:00').getTime();
+  const el = document.getElementById('runwayCount');
+  if (!el) return;
+  function tick() {
+    const now = Date.now();
+    if (target <= now) { el.textContent = 'LA28 underway'; return; }
+    const diffMs = target - now;
+    const days = Math.floor(diffMs / 86400000);
+    const weeks = Math.floor(days / 7);
+    const months = Math.floor(days / 30.44);
+    el.textContent = '~' + months + ' months · ~' + weeks + ' weeks · ' + days + ' days';
+  }
+  tick();
+  setInterval(tick, 60 * 60 * 1000);
+})();
+</script>
+</body>
+</html>
