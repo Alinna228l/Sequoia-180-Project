@@ -183,11 +183,6 @@
   .copy-btn.ok { background: var(--bark); }
   pre.prompt { margin: 0; padding: 16px 18px; font-family: var(--mono); font-size: 0.84rem; line-height: 1.55; background: #fdfaf2; color: var(--ink); white-space: pre-wrap; word-break: break-word; max-height: 360px; overflow-y: auto; }
 
-  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
-  .kpi { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
-  .kpi .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); font-weight: 700; }
-  .kpi .value { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--moss-deep); margin: 4px 0 0; }
-  .kpi .source { font-size: 0.72rem; color: var(--ink-soft); margin-top: 6px; }
 
   footer { background: var(--moss-deep); color: #ecedd5; padding: 40px 24px 28px; }
   footer .container { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 30px; }
@@ -208,7 +203,6 @@
     .grid.cols-3, .grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
     .funnel { grid-template-columns: repeat(2, 1fr); }
     .aud-grid { grid-template-columns: 1fr; }
-    .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .two-col { grid-template-columns: 1fr; }
     footer .container { grid-template-columns: 1fr; }
   }
@@ -219,7 +213,6 @@
     nav.primary::-webkit-scrollbar { height: 0; }
     .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
     .funnel { grid-template-columns: 1fr; }
-    .kpi-row { grid-template-columns: 1fr 1fr; }
     .hero-actions .btn { font-size: 0.88rem; padding: 10px 14px; }
   }
 
@@ -246,7 +239,6 @@
       <a href="#stack">Stack</a>
       <a href="#prompts">AI Prompts</a>
       <a href="#plan">Plan</a>
-      <a href="#kpis">KPIs</a>
     </nav>
   </div>
 </header>
@@ -1403,72 +1395,6 @@ Draft:
   </div>
 </section>
 
-<section id="kpis" aria-labelledby="kpi-title">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">11 &middot; Performance tracking</div>
-        <h2 id="kpi-title">KPIs &mdash; baselines &amp; hypothetical targets</h2>
-      </div>
-      <p class="small" style="max-width:380px;">
-        SPC has not yet shared current baseline numbers with this toolkit. All numerical targets below are explicitly labeled as <span class="baseline-tag">Hypothetical target</span> &mdash; replace with real baselines as Power BI matures.
-      </p>
-    </div>
-
-    <div class="kpi-row">
-      <div class="kpi">
-        <div class="label">Email list growth</div>
-        <div class="value">+30% YoY <span class="baseline-tag" style="font-size:0.6rem;">Hypothetical target</span></div>
-        <div class="source">Replace with the SPC Constant Contact baseline once captured. Email is the most preferred donor update channel. <a href="https://www.nptechforgood.com/101-best-practices/email-marketing-statistics-for-nonprofits/" target="_blank" rel="noopener">Nonprofit Tech for Good</a>.</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Online giving</div>
-        <div class="value">&ge; sector growth <span class="baseline-tag" style="font-size:0.6rem;">Hypothetical target</span></div>
-        <div class="source">Reference: 2024 overall individual giving grew 1.9% YoY; mean gift across all subsectors $937 in 2024. <a href="https://candid.org/blogs/individual-giving-trends-2024-blackbaud-institute-report-takeaways/" target="_blank" rel="noopener">Candid summarizing Blackbaud Institute, 2025</a>.</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Donor retention</div>
-        <div class="value">+5pp vs. baseline <span class="baseline-tag" style="font-size:0.6rem;">Hypothetical target</span></div>
-        <div class="source">Sector retention edged from 43.1% to 43.3% in recent FEP reporting. <a href="https://publications.fepreports.org" target="_blank" rel="noopener">FEP Quarterly Report</a>.</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Google Ad Grants utilization</div>
-        <div class="value">Up to $10K / mo <span class="baseline-tag" style="font-size:0.6rem;">Cap, not a target</span></div>
-        <div class="source">Eligible 501(c)(3)s can receive up to $10,000 / month in in-kind Google Search ads. <a href="https://www.wrightcollective.co/post/unlocking-10-000-month-in-free-google-ads-a-guide-to-see-if-it-s-right-for-your-nonprofit" target="_blank" rel="noopener">Wright Collective overview</a>.</div>
-      </div>
-    </div>
-
-    <div class="grid cols-3" style="margin-top:24px;">
-      <div class="card">
-        <h3>Audience &amp; awareness KPIs</h3>
-        <ul class="tight">
-          <li>Email subscribers (Constant Contact total + net adds).</li>
-          <li>Site sessions, returning visitors, LA28 landing page bounce rate (GA).</li>
-          <li>Short-form reach and saves (TikTok, Instagram Reels).</li>
-          <li>YouTube watch-time minutes (long-form retention).</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Engagement &amp; pipeline KPIs</h3>
-        <ul class="tight">
-          <li>Field Institute group inquiries / quarter (B2B funnel).</li>
-          <li>Partner pipeline stage progression (Monday.com).</li>
-          <li>Cold-to-meeting conversion rate on outreach emails.</li>
-          <li>UGC mentions tagged @sequoiaparksconservancy.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Revenue &amp; retention KPIs</h3>
-        <ul class="tight">
-          <li>Donations by track (trail / wildlife / replanting) once split.</li>
-          <li>Average gift size and YoY change.</li>
-          <li>Donor retention rate; lapsed reactivation rate.</li>
-          <li>Power BI dashboard adoption: % of weekly leadership pulls (once dashboard launches).</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 </main>
 
